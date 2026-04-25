@@ -711,9 +711,83 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
       display: none;
     }}
 
+    .mobile-preview {{
+      position: fixed;
+      inset: 0;
+      z-index: 20;
+      display: none;
+      place-items: center;
+      padding: 18px;
+      background: rgba(17, 24, 39, 0.72);
+    }}
+
+    .mobile-preview.open {{
+      display: grid;
+    }}
+
+    .mobile-preview-inner {{
+      position: relative;
+      width: min(100%, 360px);
+    }}
+
+    .mobile-preview img {{
+      display: block;
+      width: 100%;
+      max-height: calc(100vh - 56px);
+      object-fit: contain;
+      border-radius: 12px;
+      box-shadow: var(--shadow);
+    }}
+
+    .mobile-preview button {{
+      position: absolute;
+      top: -12px;
+      right: -12px;
+      width: 36px;
+      height: 36px;
+      border: 0;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--ink);
+      font-size: 24px;
+      line-height: 1;
+      box-shadow: 0 8px 22px rgba(17, 24, 39, 0.24);
+    }}
+
     @media (max-width: 860px) {{
       main {{
         grid-template-columns: 1fr;
+        width: min(100% - 20px, 720px);
+        padding-top: 18px;
+      }}
+
+      h1 {{
+        font-size: 24px;
+      }}
+
+      h2 {{
+        display: block;
+        font-size: 19px;
+      }}
+
+      h2 span {{
+        display: block;
+        margin-top: 3px;
+      }}
+
+      h3 {{
+        font-size: 14px;
+      }}
+
+      .card-row {{
+        grid-template-columns: 1fr;
+        gap: 3px;
+        min-height: 48px;
+      }}
+
+      .card-row span:last-child {{
+        text-align: left;
+        white-space: normal;
       }}
 
       .preview {{
@@ -736,9 +810,18 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
       </div>
     </aside>
   </main>
+  <div class="mobile-preview" id="mobile-preview" aria-hidden="true">
+    <div class="mobile-preview-inner">
+      <button type="button" aria-label="Close card preview">&times;</button>
+      <img id="mobile-card-preview" alt="">
+    </div>
+  </div>
   <script>
     const preview = document.querySelector(".preview");
     const image = document.querySelector("#card-preview");
+    const mobilePreview = document.querySelector("#mobile-preview");
+    const mobileImage = document.querySelector("#mobile-card-preview");
+    const mobileClose = document.querySelector("#mobile-preview button");
 
     function showCard(row) {{
       const source = row.dataset.image;
@@ -748,10 +831,37 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
       preview.classList.add("has-image");
     }}
 
+    function openMobileCard(row) {{
+      const source = row.dataset.image;
+      if (!source || !window.matchMedia("(max-width: 860px)").matches) return;
+      mobileImage.src = source;
+      mobileImage.alt = row.querySelector("span")?.textContent || "Card preview";
+      mobilePreview.classList.add("open");
+      mobilePreview.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+    }}
+
+    function closeMobileCard() {{
+      mobilePreview.classList.remove("open");
+      mobilePreview.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }}
+
     document.querySelectorAll(".card-row").forEach((row) => {{
       row.addEventListener("pointerenter", () => showCard(row));
       row.addEventListener("focus", () => showCard(row));
-      row.addEventListener("click", () => showCard(row));
+      row.addEventListener("click", () => {{
+        showCard(row);
+        openMobileCard(row);
+      }});
+    }});
+
+    mobileClose.addEventListener("click", closeMobileCard);
+    mobilePreview.addEventListener("click", (event) => {{
+      if (event.target === mobilePreview) closeMobileCard();
+    }});
+    document.addEventListener("keydown", (event) => {{
+      if (event.key === "Escape") closeMobileCard();
     }});
   </script>
 </body>
