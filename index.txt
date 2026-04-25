@@ -1,0 +1,140 @@
+EUR/CZK: 24.373 (ECB 2026-04-24)
+
+want-list-grist-base | total 1136.60 eur / 27702.35 CZK
+
+0-5 eur | total 41.60 eur / 1013.92 CZK
+Grief > 0.02 eur / 0.49 CZK
+Gilded Goose > 0.22 eur / 5.36 CZK
+Lethal Scheme > 0.22 eur / 5.36 CZK
+Wild Growth > 0.27 eur / 6.58 CZK
+Accursed Marauder > 0.29 eur / 7.07 CZK
+Massacre Girl > 0.29 eur / 7.07 CZK
+Inquisition of Kozilek > 0.46 eur / 11.21 CZK
+Arbor Elf > 0.50 eur / 12.19 CZK
+Elvish Mystic > 0.51 eur / 12.43 CZK
+Bloodghast > 0.53 eur / 12.92 CZK
+Haywire Mite > 0.55 eur / 13.41 CZK
+Eternal Witness > 0.65 eur / 15.84 CZK
+Wight of the Reliquary > 0.74 eur / 18.04 CZK
+Chthonian Nightmare > 0.80 eur / 19.50 CZK
+Utopia Sprawl > 1.10 eur / 26.81 CZK
+Abrupt Decay > 1.22 eur / 29.74 CZK
+Keen-Eyed Curator > 1.24 eur / 30.22 CZK
+Hogaak, Arisen Necropolis > 1.30 eur / 31.68 CZK
+Boreal Druid > 1.61 eur / 39.24 CZK
+Blooming Marsh > 1.67 eur / 40.70 CZK
+Frenzied Baloth > 1.92 eur / 46.80 CZK
+Fyndhorn Elves > 2.24 eur / 54.60 CZK
+Dryad Arbor > 2.39 eur / 58.25 CZK
+Emperor of Bones > 2.64 eur / 64.34 CZK
+Living Death > 2.77 eur / 67.51 CZK
+Chord of Calling > 3.59 eur / 87.50 CZK
+Springheart Nantuko > 3.63 eur / 88.47 CZK
+Skullclamp > 3.76 eur / 91.64 CZK
+Endurance > 4.47 eur / 108.95 CZK
++ Duress > 0.06 eur / 1.46 CZK
++ Llanowar Elves > 0.12 eur / 2.92 CZK
++ Command Tower > 0.13 eur / 3.17 CZK
++ Unearth > 0.45 eur / 10.97 CZK
++ Elves of Deep Shadow > 1.30 eur / 31.68 CZK
++ Birds of Paradise > 3.00 eur / 73.12 CZK
+
+5-10 eur | total 75.38 eur / 1837.24 CZK
+Nurturing Peatland > 5.11 eur / 124.55 CZK
+Darkbore Pathway > 5.19 eur / 126.50 CZK
+Shifting Woodland > 5.82 eur / 141.85 CZK
+Contamination > 6.19 eur / 150.87 CZK
+Metamorphosis Fanatic > 6.61 eur / 161.11 CZK
+Deathrite Shaman > 6.70 eur / 163.30 CZK
+Thoughtseize > 6.73 eur / 164.03 CZK
+Wastewood Verge > 7.45 eur / 181.58 CZK
+Takenuma, Abandoned Mire > 8.33 eur / 203.03 CZK
+Yavimaya, Cradle of Growth > 8.37 eur / 204.00 CZK
+Diabolic Intent > 8.88 eur / 216.43 CZK
++ Overgrown Tomb > 7.16 eur / 174.51 CZK
++ Toxic Deluge > 7.17 eur / 174.75 CZK
++ Windswept Heath > 9.54 eur / 232.52 CZK
+
+10-50 eur | total 432.88 eur / 10550.58 CZK
+Formidable Speaker > 11.66 eur / 284.19 CZK
+Underground Mortuary > 13.26 eur / 323.19 CZK
+Green Sun's Zenith > 15.04 eur / 366.57 CZK
+Wooded Foothills > 15.11 eur / 368.28 CZK
+Worldly Tutor > 15.15 eur / 369.25 CZK
+Delighted Halfling > 15.75 eur / 383.87 CZK
+Polluted Delta > 15.75 eur / 383.87 CZK
+Barrowgoyf > 16.27 eur / 396.55 CZK
+Phyrexian Tower > 21.85 eur / 532.55 CZK
+Marsh Flats > 22.05 eur / 537.42 CZK
+Misty Rainforest > 23.02 eur / 561.07 CZK
+Opposition Agent > 23.82 eur / 580.56 CZK
+Yawgmoth, Thran Physician > 24.14 eur / 588.36 CZK
+Orcish Bowmasters > 29.51 eur / 719.25 CZK
+Urborg, Tomb of Yawgmoth > 31.61 eur / 770.43 CZK
+Boseiju, Who Endures > 31.62 eur / 770.67 CZK
+Prismatic Vista > 32.91 eur / 802.12 CZK
+Demonic Tutor > 36.24 eur / 883.28 CZK
+Urza's Saga > 38.12 eur / 929.10 CZK
++ Bloodstained Mire > 15.16 eur / 369.49 CZK
++ Verdant Catacombs > 20.19 eur / 492.09 CZK
+
+200+ eur | total 586.74 eur / 14300.61 CZK
+Bayou > 257.99 eur / 6287.99 CZK
+Survival of the Fittest > 328.75 eur / 8012.62 CZK
+
+want-list-grist-samuel | total 252.36 eur / 6150.77 CZK
+
+0-5 eur | total 13.21 eur / 321.97 CZK
+Stone of Erech > 0.17 eur / 4.14 CZK
+Twilight Mire > 0.35 eur / 8.53 CZK
+Cling to Dust > 0.37 eur / 9.02 CZK
+Hive of the Eye Tyrant > 1.08 eur / 26.32 CZK
+Fauna Shaman > 1.59 eur / 38.75 CZK
+Sowing Mycospawn > 2.36 eur / 57.52 CZK
+Profane Tutor > 2.68 eur / 65.32 CZK
+Acererak the Archlich > 4.61 eur / 112.36 CZK
++ Cankerbloom > 0.28 eur / 6.82 CZK
++ Llanowar Wastes > 0.75 eur / 18.28 CZK
+
+5-10 eur | total 6.61 eur / 161.11 CZK
+Maze of Ith > 6.61 eur / 161.11 CZK
+
+10-50 eur | total 72.92 eur / 1777.28 CZK
+Multiversal Passage > 11.73 eur / 285.90 CZK
+Beseech the Mirror > 12.55 eur / 305.88 CZK
+Badgermole Cub > 48.64 eur / 1185.50 CZK
+
+50-100 eur | total 159.62 eur / 3890.42 CZK
+Aluren > 72.49 eur / 1766.80 CZK
+Earthcraft > 87.13 eur / 2123.62 CZK
+
+want-list-grist-simone | total 216.01 eur / 5264.81 CZK
+
+0-5 eur | total 16.72 eur / 407.52 CZK
+Skyfisher Spider > 0.23 eur / 5.61 CZK
+Tectonic Edge > 0.23 eur / 5.61 CZK
+Long Goodbye > 0.30 eur / 7.31 CZK
+Bitter Triumph > 0.44 eur / 10.72 CZK
+Cut Down > 0.65 eur / 15.84 CZK
+Fatal Push > 0.81 eur / 19.74 CZK
+Lively Dirge > 0.83 eur / 20.23 CZK
+Desperate Plea > 0.87 eur / 21.20 CZK
+Pendelhaven > 1.54 eur / 37.53 CZK
+Boggart Trawler > 1.71 eur / 41.68 CZK
+Deathcap Glade > 1.75 eur / 42.65 CZK
+Masked Vandal > 2.56 eur / 62.39 CZK
+Fell the Profane > 4.80 eur / 116.99 CZK
++ Woodland Cemetery > 0.36 eur / 8.77 CZK
++ Bojuka Bog > 0.95 eur / 23.15 CZK
+
+5-10 eur | total 12.32 eur / 300.28 CZK
+Dauthi Voidwalker > 5.35 eur / 130.40 CZK
+Fanatic of Rhonas > 6.97 eur / 169.88 CZK
+
+10-50 eur | total 40.32 eur / 982.72 CZK
+Icetill Explorer > 19.11 eur / 465.77 CZK
+Sephiroth, Fabled SOLDIER > 21.21 eur / 516.95 CZK
+
+50-100 eur | total 146.65 eur / 3574.30 CZK
+Recurring Nightmare > 61.45 eur / 1497.72 CZK
+Volrath's Stronghold > 85.20 eur / 2076.58 CZK

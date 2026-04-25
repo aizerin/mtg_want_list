@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>MTG Want List Prices</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f6f3ed;
+      --panel: #ffffff;
+      --ink: #1f2933;
+      --muted: #667085;
+      --line: #d9d3c8;
+      --accent: #1c6f5b;
+      --accent-soft: #e5f2ee;
+      --shadow: 0 18px 45px rgba(25, 32, 38, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      font-size: 15px;
+      line-height: 1.35;
+    }
+
+    main {
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 28px 0 48px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 340px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    h1 {
+      margin: 0 0 6px;
+      font-size: 28px;
+      font-weight: 750;
+      letter-spacing: 0;
+    }
+
+    .rate-note {
+      margin: 0 0 22px;
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    h2 {
+      margin: 28px 0 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: baseline;
+      font-size: 22px;
+      font-weight: 750;
+      letter-spacing: 0;
+      color: #18232d;
+    }
+
+    h2 span {
+      color: var(--accent);
+      font-size: 15px;
+      font-weight: 750;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+    }
+
+    h3 {
+      margin: 0;
+      padding: 12px 14px;
+      border-bottom: 1px solid var(--line);
+      font-size: 15px;
+      font-weight: 750;
+      letter-spacing: 0;
+      color: #26323d;
+    }
+
+    .bands {
+      min-width: 0;
+    }
+
+    .wantlist-section {
+      margin-bottom: 30px;
+    }
+
+    .wantlist-section:first-of-type h2 {
+      margin-top: 0;
+    }
+
+    .price-band {
+      margin-bottom: 16px;
+      overflow: hidden;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .card-list {
+      display: grid;
+    }
+
+    .card-row,
+    .missing-row,
+    .empty {
+      min-height: 38px;
+      padding: 9px 14px;
+      border-top: 1px solid #eee9df;
+    }
+
+    .card-row:first-child,
+    .missing-row:first-child,
+    .empty:first-child {
+      border-top: 0;
+    }
+
+    .card-row {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(150px, auto);
+      gap: 16px;
+      align-items: center;
+      cursor: default;
+      outline: 0;
+    }
+
+    .card-row span:first-child {
+      min-width: 0;
+      overflow-wrap: anywhere;
+      font-weight: 560;
+    }
+
+    .card-row span:last-child {
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
+      text-align: right;
+    }
+
+    .card-row:hover,
+    .card-row:focus {
+      background: var(--accent-soft);
+    }
+
+    .card-row.owned,
+    .missing-row.owned {
+      background: #e7f6ec;
+      color: #166534;
+    }
+
+    .card-row.owned span:last-child {
+      color: #2f7d46;
+    }
+
+    .card-row.owned:hover,
+    .card-row.owned:focus {
+      background: #d8f0df;
+    }
+
+    .preview {
+      position: sticky;
+      top: 24px;
+      min-height: 480px;
+    }
+
+    .preview-frame {
+      min-height: 474px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ede8dd;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+    }
+
+    .preview img {
+      width: min(100%, 336px);
+      aspect-ratio: 488 / 680;
+      object-fit: contain;
+      display: none;
+    }
+
+    .preview.has-image img {
+      display: block;
+    }
+
+    .preview-label {
+      color: var(--muted);
+      padding: 20px;
+      text-align: center;
+    }
+
+    .preview.has-image .preview-label {
+      display: none;
+    }
+
+    @media (max-width: 860px) {
+      main {
+        grid-template-columns: 1fr;
+      }
+
+      .preview {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <div class="bands">
+      <h1>MTG Want List Prices</h1>
+      <p class="rate-note">EUR/CZK: 24.373 (ECB 2026-04-24)</p>
+      <section class="wantlist-section"><h2>want-list-grist-base<span>1136.60 eur / 27702.35 CZK</span></h2><section class="price-band"><h3>0-5 eur | total 41.60 eur / 1013.92 CZK</h3><div class="card-list"><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/4/0/40d77804-b81f-4e89-8528-1f3970ef3cd6.jpg?1669836837"><span>Grief</span><span>0.02 eur / 0.49 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/5/e/5ea59511-24b1-4925-9948-9d4c0d27d1c5.jpg?1775941482"><span>Gilded Goose</span><span>0.22 eur / 5.36 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/0/8/0802be9f-686f-4321-afa4-d472241de653.jpg?1748705188"><span>Lethal Scheme</span><span>0.22 eur / 5.36 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/2/a/2a9e6630-d57c-47fd-af0f-b2e2c2025599.jpg?1562590145"><span>Wild Growth</span><span>0.27 eur / 6.58 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/5/d/5da14d86-0780-4821-a799-96f64b377df4.jpg?1717011855"><span>Accursed Marauder</span><span>0.29 eur / 7.07 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/f/a/fab14e57-8e49-49fd-ad3f-ac669318bb14.jpg?1712354314"><span>Massacre Girl</span><span>0.29 eur / 7.07 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/e/7/e7dd9fad-d8e3-4e46-b4d7-792d029736de.jpg?1593813320"><span>Inquisition of Kozilek</span><span>0.46 eur / 11.21 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/6/d/6d32a4ed-6b43-4473-91ec-08cd5414f2f0.jpg?1562289419"><span>Arbor Elf</span><span>0.50 eur / 12.19 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/7/5/75918859-c93f-41b4-9ad0-a4a96c389f0d.jpg?1689998466"><span>Elvish Mystic</span><span>0.51 eur / 12.43 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/c/e/cee85485-598f-4dfc-aa0b-7b1de86c7788.jpg?1775941055"><span>Bloodghast</span><span>0.53 eur / 12.92 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/6/f/6f813bc3-6d81-4555-8e4b-6ecd9a6757b7.jpg?1775942048"><span>Haywire Mite</span><span>0.55 eur / 13.41 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/c/7/c7e10ca7-1e5d-4224-82cf-798a4d436d72.jpg?1562879671"><span>Eternal Witness</span><span>0.65 eur / 15.84 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/a/8/a8c6ee26-fa74-4859-9a94-89b476d218d2.jpg?1775941970"><span>Wight of the Reliquary</span><span>0.74 eur / 18.04 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/c/e/ce5dd2c1-b6e0-4914-b5c9-7dd451c29e22.jpg?1717011882"><span>Chthonian Nightmare</span><span>0.80 eur / 19.50 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/5/0/5047e271-fbf1-402c-9eb9-0806e5988f76.jpg?1593273517"><span>Utopia Sprawl</span><span>1.10 eur / 26.81 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/7/4/74379bab-1bf2-4dcd-b055-d2ac0bf2c390.jpg?1723227446"><span>Abrupt Decay</span><span>1.22 eur / 29.74 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/8/c/8cf33d80-0704-4dc4-8e8d-1dcbcbc35add.jpg?1721426856"><span>Keen-Eyed Curator</span><span>1.24 eur / 30.22 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/3/f/3f0c93e1-1057-42b9-8503-10ab757df2e8.jpg?1723224117"><span>Hogaak, Arisen Necropolis</span><span>1.30 eur / 31.68 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/4/7/473d3633-6dc7-4026-a50e-3ea76b9e8c20.jpg?1593275370"><span>Boreal Druid</span><span>1.61 eur / 39.24 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/9/0/90da33d4-fe9c-42fe-b326-2fe337dc3ecd.jpg?1576383503"><span>Blooming Marsh</span><span>1.67 eur / 40.70 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/9/7/9797f0ca-8252-4cdb-8036-ea0d9877569a.jpg?1754253164"><span>Frenzied Baloth</span><span>1.92 eur / 46.80 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/5/3/53c31b33-d947-4776-8953-da5bc84ca5ca.jpg?1723434743"><span>Fyndhorn Elves</span><span>2.24 eur / 54.60 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/7/d/7d131beb-9458-4ad4-8074-85e116a3d24d.jpg?1723251404"><span>Dryad Arbor</span><span>2.39 eur / 58.25 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/d/f/df9d9075-2d1e-4848-b661-816d539e05eb.jpg?1763472848"><span>Emperor of Bones</span><span>2.64 eur / 64.34 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/9/0/902e75fd-f5d6-4102-9e9b-d8d05a97be86.jpg?1562921773"><span>Living Death</span><span>2.77 eur / 67.51 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/5/e/5ef345fc-e64e-4053-b643-2f8648a5473a.jpg?1628076663"><span>Chord of Calling</span><span>3.59 eur / 87.50 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/0/a/0ad198cb-32e5-4e3e-9581-d764ca6a8983.jpg?1774863928"><span>Springheart Nantuko</span><span>3.63 eur / 88.47 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/5/5/55318397-de3c-47ea-a088-72a24df5c8fa.jpg?1562636939"><span>Skullclamp</span><span>3.76 eur / 91.64 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/b/7/b770471c-1bf7-4179-8418-dcd790ca5405.jpg?1770635221"><span>Endurance</span><span>4.47 eur / 108.95 CZK</span></div><div class="card-row owned" tabindex="0" data-image="https://cards.scryfall.io/normal/front/6/8/68cd43ba-646b-44b3-a1a5-0e6b6ceca866.jpg?1675199584"><span>+ Duress</span><span>0.06 eur / 1.46 CZK</span></div><div class="card-row owned" tabindex="0" data-image="https://cards.scryfall.io/normal/front/9/1/913907e2-28dd-4080-b725-52a43868e060.jpg?1562738538"><span>+ Llanowar Elves</span><span>0.12 eur / 2.92 CZK</span></div><div class="card-row owned" tabindex="0" data-image="https://cards.scryfall.io/normal/front/4/d/4d51a621-be31-4b74-8e0b-3958180a8bc5.jpg?1771424570"><span>+ Command Tower</span><span>0.13 eur / 3.17 CZK</span></div><div class="card-row owned" tabindex="0" data-image="https://cards.scryfall.io/normal/front/b/6/b62abd0c-ec3e-45d7-989d-da269812aeef.jpg?1562201767"><span>+ Unearth</span><span>0.45 eur / 10.97 CZK</span></div><div class="card-row owned" tabindex="0" data-image="https://cards.scryfall.io/normal/front/7/b/7bea6dea-d767-4092-a285-305d9997357a.jpg?1598916196"><span>+ Elves of Deep Shadow</span><span>1.30 eur / 31.68 CZK</span></div><div class="card-row owned" tabindex="0" data-image="https://cards.scryfall.io/normal/front/f/9/f98a2785-cb74-4ef9-abd0-d7a8125d73ca.jpg?1559593046"><span>+ Birds of Paradise</span><span>3.00 eur / 73.12 CZK</span></div></div></section><section class="price-band"><h3>5-10 eur | total 75.38 eur / 1837.24 CZK</h3><div class="card-list"><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/2/7/2744ac83-a79f-4042-8720-688b5adda382.jpg?1562202580"><span>Nurturing Peatland</span><span>5.11 eur / 124.55 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/8/7/87a4e5fe-161f-42da-9ca2-67c8e8970e94.jpg?1669839402"><span>Darkbore Pathway</span><span>5.19 eur / 126.50 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/0/5/059164e1-894d-4586-9800-e60d6fbd6eb6.jpg?1717013047"><span>Shifting Woodland</span><span>5.82 eur / 141.85 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/5/5/55b2a121-e0d8-46d6-b1dc-fd857ea109f4.jpg?1723221637"><span>Contamination</span><span>6.19 eur / 150.87 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/1/6/16448d95-ee21-4def-b880-26f6f159c213.jpg?1726284146"><span>Metamorphosis Fanatic</span><span>6.61 eur / 161.11 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/a/6/a65e485b-03a2-4634-9218-f5bb7c104d41.jpg?1541002960"><span>Deathrite Shaman</span><span>6.70 eur / 163.30 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/6/5/65b7275a-5305-42e6-b5c3-8b88568b4e28.jpg?1562819184"><span>Thoughtseize</span><span>6.73 eur / 164.03 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/0/0/0001b4a6-10bf-4bdd-a9da-fe78d9d39a82.jpg?1739573394"><span>Wastewood Verge</span><span>7.45 eur / 181.58 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/4/9/499037cc-a577-41cb-8ca2-5e117945634f.jpg?1654569039"><span>Takenuma, Abandoned Mire</span><span>8.33 eur / 203.03 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/8/a/8a12b4f7-8f6b-4a3c-9114-825e1b2099a0.jpg?1717191223"><span>Yavimaya, Cradle of Growth</span><span>8.37 eur / 204.00 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/1/0/10ef1c00-7ead-4ebb-9e64-1b29d8f088b8.jpg?1675621471"><span>Diabolic Intent</span><span>8.88 eur / 216.43 CZK</span></div><div class="card-row owned" tabindex="0" data-image="https://cards.scryfall.io/normal/front/f/e/fe73afbc-e31f-404d-8bab-f66330e533c7.jpg?1769126150"><span>+ Overgrown Tomb</span><span>7.16 eur / 174.51 CZK</span></div><div class="card-row owned" tabindex="0" data-image="https://cards.scryfall.io/normal/front/a/1/a1c2a8da-56b0-4cab-b07b-10cac92c72c5.jpg?1775940463"><span>+ Toxic Deluge</span><span>7.17 eur / 174.75 CZK</span></div><div class="card-row owned" tabindex="0" data-image="https://cards.scryfall.io/normal/front/e/7/e7b28650-cddc-4878-b1d1-b5a764f4df49.jpg?1707235002"><span>+ Windswept Heath</span><span>9.54 eur / 232.52 CZK</span></div></div></section><section class="price-band"><h3>10-50 eur | total 432.88 eur / 10550.58 CZK</h3><div class="card-list"><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/2/6/265522eb-4f6a-40e7-b374-3833fa63c80b.jpg?1765118668"><span>Formidable Speaker</span><span>11.66 eur / 284.19 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/f/6/f6ca59cd-8779-4a84-a54b-e863b79c61f0.jpg?1759236535"><span>Underground Mortuary</span><span>13.26 eur / 323.19 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/0/2/02335747-54e3-4827-ae19-4e362863da9b.jpg?1764758773"><span>Green Sun&#x27;s Zenith</span><span>15.04 eur / 366.57 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/a/8/a8503cca-7e7d-44c4-8587-81376b396398.jpg?1707234996"><span>Wooded Foothills</span><span>15.11 eur / 368.28 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/b/3/b34d9054-5ad8-4a7d-a5c8-58bc39051834.jpg?1562821778"><span>Worldly Tutor</span><span>15.15 eur / 369.25 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/3/c/3c75a46d-f0fe-453b-934f-c53fba52329b.jpg?1698800682"><span>Delighted Halfling</span><span>15.75 eur / 383.87 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/f/f/ff2f5f58-9a95-4ca6-93a0-813738f0072f.jpg?1707235020"><span>Polluted Delta</span><span>15.75 eur / 383.87 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/c/e/cea3b218-0e6e-443a-84f7-380f1021e8e1.jpg?1775745570"><span>Barrowgoyf</span><span>16.27 eur / 396.55 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/c/2/c25dc997-219f-44e9-9003-384f75a606a3.jpg?1559959285"><span>Phyrexian Tower</span><span>21.85 eur / 532.55 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/9/d/9db3ba6d-eb7f-4f5b-9a3b-c6239c3baa42.jpg?1738703598"><span>Marsh Flats</span><span>22.05 eur / 537.42 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/2/4/24a5cc2c-0fbf-4a5f-b175-6e0ffd0d0787.jpg?1562610639"><span>Misty Rainforest</span><span>23.02 eur / 561.07 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/0/8/086f97e9-8b62-44f3-b467-149c2ac5ca78.jpg?1608909875"><span>Opposition Agent</span><span>23.82 eur / 580.56 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/8/1/81564970-23ad-41a3-b5e0-21bdf13f6248.jpg?1619401285"><span>Yawgmoth, Thran Physician</span><span>24.14 eur / 588.36 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/1/a/1a22aef4-260f-4f30-ba49-fbe7ed0a162f.jpg?1698796388"><span>Orcish Bowmasters</span><span>29.51 eur / 719.25 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/1/9/19e1224f-82cb-4f41-8739-f880cba61bbb.jpg?1562566720"><span>Urborg, Tomb of Yawgmoth</span><span>31.61 eur / 770.43 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/d/d/dda82840-1f3f-4be7-9bc7-66ff551ef5c0.jpg?1675617053"><span>Boseiju, Who Endures</span><span>31.62 eur / 770.67 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/e/3/e37da81e-be12-45a2-9128-376f1ad7b3e8.jpg?1562202585"><span>Prismatic Vista</span><span>32.91 eur / 802.12 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/8/8/881e5922-b464-4a1a-b074-664bd6c0a7f6.jpg?1559596930"><span>Demonic Tutor</span><span>36.24 eur / 883.28 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/c/1/c1e0f201-42cb-46a1-901a-65bb4fc18f6c.jpg?1667318301"><span>Urza&#x27;s Saga</span><span>38.12 eur / 929.10 CZK</span></div><div class="card-row owned" tabindex="0" data-image="https://cards.scryfall.io/normal/front/7/f/7f430794-0d86-4f6a-97e0-4bbb6716d613.jpg?1707235037"><span>+ Bloodstained Mire</span><span>15.16 eur / 369.49 CZK</span></div><div class="card-row owned" tabindex="0" data-image="https://cards.scryfall.io/normal/front/7/a/7abd2723-2851-4f1a-b2d0-dfcb526472c3.jpg?1562613630"><span>+ Verdant Catacombs</span><span>20.19 eur / 492.09 CZK</span></div></div></section><section class="price-band"><h3>200+ eur | total 586.74 eur / 14300.61 CZK</h3><div class="card-list"><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/5/6/56355ff3-2232-4a11-b868-aec9a50b9ee5.jpg?1559596800"><span>Bayou</span><span>257.99 eur / 6287.99 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/c/0/c060c178-3c0e-493f-b6f0-ead5b1d6f191.jpg?1775571002"><span>Survival of the Fittest</span><span>328.75 eur / 8012.62 CZK</span></div></div></section></section><section class="wantlist-section"><h2>want-list-grist-samuel<span>252.36 eur / 6150.77 CZK</span></h2><section class="price-band"><h3>0-5 eur | total 13.21 eur / 321.97 CZK</h3><div class="card-list"><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/3/6/36c94240-6a84-4df2-9dc5-74f6aee3e81a.jpg?1698800056"><span>Stone of Erech</span><span>0.17 eur / 4.14 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/3/c/3cc8186b-b46f-46c0-8dfb-9e423e430048.jpg?1775942511"><span>Twilight Mire</span><span>0.35 eur / 8.53 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/1/f/1f9df729-f0c7-4ff8-9aa6-d67bf9607763.jpg?1723443504"><span>Cling to Dust</span><span>0.37 eur / 9.02 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/9/e/9eb391dc-0378-4793-a5de-899b09792a4b.jpg?1627710306"><span>Hive of the Eye Tyrant</span><span>1.08 eur / 26.32 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/7/f/7fec3fbc-31d5-4ed3-ac2c-c26c12218b37.jpg?1675621035"><span>Fauna Shaman</span><span>1.59 eur / 38.75 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/c/d/cdfadb17-76ad-4d4d-9fa7-33c4b88b4c0a.jpg?1743419005"><span>Sowing Mycospawn</span><span>2.36 eur / 57.52 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/2/a/2afc6f7d-ab59-4d64-bd11-6bd0fd4bfcd2.jpg?1626095854"><span>Profane Tutor</span><span>2.68 eur / 65.32 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/b/7/b7cf655f-6328-4fcd-82d7-3964aba9fc0b.jpg?1627952584"><span>Acererak the Archlich</span><span>4.61 eur / 112.36 CZK</span></div><div class="card-row owned" tabindex="0" data-image="https://cards.scryfall.io/normal/front/8/9/89b39293-6f57-4294-85fc-c718bdbb4d40.jpg?1675957129"><span>+ Cankerbloom</span><span>0.28 eur / 6.82 CZK</span></div><div class="card-row owned" tabindex="0" data-image="https://cards.scryfall.io/normal/front/1/0/10716909-1254-4b2b-997e-23a18994a98d.jpg?1674422216"><span>+ Llanowar Wastes</span><span>0.75 eur / 18.28 CZK</span></div></div></section><section class="price-band"><h3>5-10 eur | total 6.61 eur / 161.11 CZK</h3><div class="card-list"><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/4/b/4b8eee4f-99e3-499d-9d6d-0bff023f6512.jpg?1580015334"><span>Maze of Ith</span><span>6.61 eur / 161.11 CZK</span></div></div></section><section class="price-band"><h3>10-50 eur | total 72.92 eur / 1777.28 CZK</h3><div class="card-list"><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/d/b/db88b6b6-7907-4c40-b712-4fa1456d8ad0.jpg?1757378406"><span>Multiversal Passage</span><span>11.73 eur / 285.90 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/a/1/a188d4d7-3afd-49f4-aa7a-d3fbefdacd00.jpg?1694308833"><span>Beseech the Mirror</span><span>12.55 eur / 305.88 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/3/4/340c5799-4964-44dd-8c48-8f3f3aba5211.jpg?1764121140"><span>Badgermole Cub</span><span>48.64 eur / 1185.50 CZK</span></div></div></section><section class="price-band"><h3>50-100 eur | total 159.62 eur / 3890.42 CZK</h3><div class="card-list"><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/2/6/268403bc-733d-446e-a7c1-abc957c42bc2.jpg?1595430482"><span>Aluren</span><span>72.49 eur / 1766.80 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/9/d/9dda7531-82a1-4f49-8858-601ddbc6e2bc.jpg?1587857352"><span>Earthcraft</span><span>87.13 eur / 2123.62 CZK</span></div></div></section></section><section class="wantlist-section"><h2>want-list-grist-simone<span>216.01 eur / 5264.81 CZK</span></h2><section class="price-band"><h3>0-5 eur | total 16.72 eur / 407.52 CZK</h3><div class="card-list"><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/8/7/87300ac8-8b6f-4c37-8058-beb59eaa66be.jpg?1674421851"><span>Skyfisher Spider</span><span>0.23 eur / 5.61 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/0/2/02174040-f292-468b-9aa6-4bd468b38cf9.jpg?1717191128"><span>Tectonic Edge</span><span>0.23 eur / 5.61 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/b/1/b12a8889-1323-4268-b34c-146c4136fd53.jpg?1707049944"><span>Long Goodbye</span><span>0.30 eur / 7.31 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/d/b/db465858-0593-4850-8f1d-400fe230a18d.jpg?1775936553"><span>Bitter Triumph</span><span>0.44 eur / 10.72 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/7/5/753db072-5d6a-4f37-8f7d-255572ecd3bd.jpg?1673307061"><span>Cut Down</span><span>0.65 eur / 15.84 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/2/4/2430f223-edb2-402b-a85b-5d328323992d.jpg?1748703818"><span>Fatal Push</span><span>0.81 eur / 19.74 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/0/c/0c35a0d3-12f7-46f3-a6b3-02a490d45ca0.jpg?1712860594"><span>Lively Dirge</span><span>0.83 eur / 20.23 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/b/4/b42b4b0e-39f6-4f93-a358-9bcec8d13b65.jpg?1764118424"><span>Desperate Plea</span><span>0.87 eur / 21.20 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/3/2/32fd7a5c-2881-4d37-9eea-5f7e44dea812.jpg?1562774296"><span>Pendelhaven</span><span>1.54 eur / 37.53 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/d/0/d0d484a6-5610-4f1d-95ec-eda273c255e4.jpg?1717013227"><span>Boggart Trawler</span><span>1.71 eur / 41.68 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/7/8/78897104-80e1-4d8a-9958-145b40f679e8.jpg?1775938766"><span>Deathcap Glade</span><span>1.75 eur / 42.65 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/f/0/f0a9c72a-e450-41e3-80e5-06f2f1171245.jpg?1631050675"><span>Masked Vandal</span><span>2.56 eur / 62.39 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/a/3/a3cb782d-c459-468d-9779-9b5669abc337.jpg?1717013242"><span>Fell the Profane</span><span>4.80 eur / 116.99 CZK</span></div><div class="card-row owned" tabindex="0" data-image="https://cards.scryfall.io/normal/front/4/d/4d6f6c96-f813-4864-b4e1-b2a0aa8be1e8.jpg?1775942552"><span>+ Woodland Cemetery</span><span>0.36 eur / 8.77 CZK</span></div><div class="card-row owned" tabindex="0" data-image="https://cards.scryfall.io/normal/front/e/3/e379c13b-88c6-46ef-b3f6-d35ed2e8860b.jpg?1562626869"><span>+ Bojuka Bog</span><span>0.95 eur / 23.15 CZK</span></div></div></section><section class="price-band"><h3>5-10 eur | total 12.32 eur / 300.28 CZK</h3><div class="card-list"><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/d/c/dce5db87-4a78-4b8d-b5c2-918ccd1ba4e3.jpg?1626095427"><span>Dauthi Voidwalker</span><span>5.35 eur / 130.40 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/b/9/b955975e-c7c4-4374-9d9e-aec82460832a.jpg?1776672391"><span>Fanatic of Rhonas</span><span>6.97 eur / 169.88 CZK</span></div></div></section><section class="price-band"><h3>10-50 eur | total 40.32 eur / 982.72 CZK</h3><div class="card-list"><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/d/9/d9482aab-6ddf-48e1-84fa-b13d5ff81e69.jpg?1752947338"><span>Icetill Explorer</span><span>19.11 eur / 465.77 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/8/5/85eaf5e7-77dc-4842-a70c-ce4ac7f724df.jpg?1748707811"><span>Sephiroth, Fabled SOLDIER</span><span>21.21 eur / 516.95 CZK</span></div></div></section><section class="price-band"><h3>50-100 eur | total 146.65 eur / 3574.30 CZK</h3><div class="card-list"><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/c/8/c8173030-1c33-417c-b8e9-79231b6a85a7.jpg?1562088796"><span>Recurring Nightmare</span><span>61.45 eur / 1497.72 CZK</span></div><div class="card-row" tabindex="0" data-image="https://cards.scryfall.io/normal/front/4/3/43bf015b-152e-4d67-b773-e75fb2487a32.jpg?1562596395"><span>Volrath&#x27;s Stronghold</span><span>85.20 eur / 2076.58 CZK</span></div></div></section></section>
+    </div>
+    <aside class="preview" aria-live="polite">
+      <div class="preview-frame">
+        <img id="card-preview" alt="">
+        <div class="preview-label">Hover a card</div>
+      </div>
+    </aside>
+  </main>
+  <script>
+    const preview = document.querySelector(".preview");
+    const image = document.querySelector("#card-preview");
+
+    function showCard(row) {
+      const source = row.dataset.image;
+      if (!source) return;
+      image.src = source;
+      image.alt = row.querySelector("span")?.textContent || "Card preview";
+      preview.classList.add("has-image");
+    }
+
+    document.querySelectorAll(".card-row").forEach((row) => {
+      row.addEventListener("pointerenter", () => showCard(row));
+      row.addEventListener("focus", () => showCard(row));
+      row.addEventListener("click", () => showCard(row));
+    });
+  </script>
+</body>
+</html>
