@@ -493,10 +493,11 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
                 owned_class = " owned" if want.owned else ""
                 rows.append(
                     f'<div class="card-row{owned_class}" tabindex="0" data-image="{image}">'
-                    f'<span>{name}</span><span>{price}</span></div>'
+                    f'<span>{name}</span><span class="price-value">{price}</span></div>'
                 )
             category_sections.append(
-                f'<section class="price-band"><h3>{html.escape(total_label(label, line_total(items), exchange_rate))}</h3>'
+                f'<section class="price-band"><h3><span>{html.escape(label)}</span>'
+                f'<span class="price-value">total {html.escape(format_prices(line_total(items), exchange_rate))}</span></h3>'
                 f'<div class="card-list">{"".join(rows)}</div></section>'
             )
 
@@ -513,7 +514,7 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
             )
         wantlist_sections.append(
             f'<section class="wantlist-section"><h2>{html.escape(wantlist.path.name)}'
-            f'<span>{html.escape(format_prices(wantlist_total(wantlist.wants, matches), exchange_rate))}</span></h2>'
+            f'<span class="price-value">{html.escape(format_prices(wantlist_total(wantlist.wants, matches), exchange_rate))}</span></h2>'
             f'{"".join(category_sections)}</section>'
         )
 
@@ -572,6 +573,34 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
       font-size: 13px;
     }}
 
+    .toolbar {{
+      margin: 0 0 18px;
+      display: flex;
+      justify-content: flex-start;
+    }}
+
+    .toolbar button {{
+      min-height: 36px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      color: var(--ink);
+      font: inherit;
+      font-weight: 650;
+      cursor: pointer;
+    }}
+
+    .toolbar button:hover,
+    .toolbar button:focus {{
+      background: var(--accent-soft);
+      outline: 0;
+    }}
+
+    body.prices-hidden .price-value {{
+      display: none;
+    }}
+
     h2 {{
       margin: 28px 0 14px;
       display: flex;
@@ -595,11 +624,22 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
     h3 {{
       margin: 0;
       padding: 12px 14px;
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      align-items: baseline;
       border-bottom: 1px solid var(--line);
       font-size: 15px;
       font-weight: 750;
       letter-spacing: 0;
       color: #26323d;
+    }}
+
+    h3 .price-value {{
+      color: var(--muted);
+      font-weight: 700;
+      font-variant-numeric: tabular-nums;
+      white-space: nowrap;
     }}
 
     .bands {{
@@ -805,11 +845,14 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
     }}
   </style>
 </head>
-<body>
+<body class="prices-hidden">
   <main>
     <div class="bands">
       <h1>MTG Want List Prices</h1>
       <p class="rate-note">EUR/CZK: {html.escape(str(exchange_rate.eur_to_czk))} ({html.escape(exchange_rate.source)})</p>
+      <div class="toolbar">
+        <button type="button" id="price-toggle" aria-pressed="false">Show Scryfall prices</button>
+      </div>
       {"".join(wantlist_sections)}
     </div>
     <aside class="preview" aria-live="polite">
@@ -831,6 +874,13 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
     const mobilePreview = document.querySelector("#mobile-preview");
     const mobileImage = document.querySelector("#mobile-card-preview");
     const mobileClose = document.querySelector("#mobile-preview button");
+    const priceToggle = document.querySelector("#price-toggle");
+
+    function setPricesVisible(visible) {{
+      document.body.classList.toggle("prices-hidden", !visible);
+      priceToggle.textContent = visible ? "Hide Scryfall prices" : "Show Scryfall prices";
+      priceToggle.setAttribute("aria-pressed", visible ? "true" : "false");
+    }}
 
     function showCard(row) {{
       const source = row.dataset.image;
@@ -863,6 +913,10 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
         showCard(row);
         openMobileCard(row);
       }});
+    }});
+
+    priceToggle.addEventListener("click", () => {{
+      setPricesVisible(document.body.classList.contains("prices-hidden"));
     }});
 
     mobileClose.addEventListener("click", closeMobileCard);
