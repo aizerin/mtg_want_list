@@ -50,7 +50,6 @@ Fell the Profane > 4.80 eur / 116.99 CZK
 + Fatal Push > 0.81 eur / 19.74 CZK
 + Bojuka Bog > 0.95 eur / 23.15 CZK
 + Elves of Deep Shadow > 1.30 eur / 31.68 CZK
-+ Birds of Paradise > 3.00 eur / 73.12 CZK
 + Skullclamp > 3.76 eur / 91.64 CZK
 + Endurance > 4.47 eur / 108.94 CZK
 
@@ -68,6 +67,7 @@ Diabolic Intent > 8.88 eur / 216.42 CZK
 + Darkbore Pathway > 5.19 eur / 126.49 CZK
 + Dauthi Voidwalker > 5.35 eur / 130.39 CZK
 + Thoughtseize > 6.73 eur / 164.02 CZK
++ Birds of Paradise > 7.12 eur / 173.53 CZK
 + Overgrown Tomb > 7.16 eur / 174.50 CZK
 + Toxic Deluge > 7.17 eur / 174.75 CZK
 + Windswept Heath > 9.54 eur / 232.51 CZK
@@ -105,14 +105,14 @@ Recurring Nightmare > 61.45 eur / 1497.66 CZK
 + Bayou > 257.99 eur / 6287.73 CZK
 + Survival of the Fittest > 328.75 eur / 8012.30 CZK
 
-want-list-other | total 985.78 eur / 24025.43 CZK
+want-list-other | total 1291.33 eur / 31472.29 CZK
 
 10-50 eur | total 86.68 eur / 2112.56 CZK
 Flooded Strand > 13.28 eur / 323.66 CZK
 Scalding Tarn > 24.76 eur / 603.45 CZK
 Badgermole Cub > 48.64 eur / 1185.45 CZK
 
-200+ eur | total 899.10 eur / 21912.87 CZK
-Underground Sea > 280.00 eur / 6824.16 CZK
+200+ eur | total 1204.65 eur / 29359.73 CZK
 Intuition > 304.01 eur / 7409.33 CZK
 Tropical Island > 315.09 eur / 7679.37 CZK
+Underground Sea > 585.55 eur / 14271.02 CZK

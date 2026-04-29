@@ -44,6 +44,13 @@ PAPER_FORMATS = {
 LEGAL_VALUES = {"legal", "restricted"}
 EXCLUDED_BORDER_COLORS = {"gold", "silver"}
 EXCLUDED_SET_TYPES = {"alchemy", "funny", "memorabilia", "minigame", "token"}
+EXCLUDED_SETS = {
+    "30a",  # 30th Anniversary Edition: commemorative, not tournament legal.
+    "ced",  # Collectors' Edition: square corners / different back.
+    "cei",  # Intl. Collectors' Edition: square corners / different back.
+    "olgc",  # Oversized championship prize cards.
+    "sum",  # Summer Magic / Edgar: recalled misprint run, not a normal tournament print.
+}
 
 CATEGORIES = [
     ("0-5 eur", Decimal("0"), Decimal("5")),
@@ -232,6 +239,8 @@ def is_tournament_legal_paper_print(card: dict[str, Any], *, allow_unreleased: b
     if card.get("oversized"):
         return False
     if card.get("border_color") in EXCLUDED_BORDER_COLORS:
+        return False
+    if card.get("set") in EXCLUDED_SETS:
         return False
     if card.get("set_type") in EXCLUDED_SET_TYPES:
         return False
