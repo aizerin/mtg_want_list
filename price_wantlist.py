@@ -11,7 +11,7 @@ import sys
 import unicodedata
 import urllib.request
 import xml.etree.ElementTree as ET
-from dataclasses import dataclass
+from dataclasses import dataclass, replace
 from datetime import date
 from decimal import Decimal, InvalidOperation
 from pathlib import Path
@@ -20,6 +20,7 @@ from typing import Any, Iterable
 
 DEFAULT_DATASET = "all-cards-20260424092225.json"
 DEFAULT_WANTLIST = "want-list-plain"
+DEFAULT_DECKS_DIR = "decks"
 DEFAULT_OUTPUT = "index.html"
 ECB_DAILY_RATES_URL = "https://www.ecb.europa.eu/stats/eurofxref/eurofxref-daily.xml"
 
@@ -60,6 +61,8 @@ CATEGORIES = [
     ("100-200 eur", Decimal("100"), Decimal("200")),
     ("200+ eur", Decimal("200"), None),
 ]
+
+SECTION_HEADERS = {"sideboard", "maybeboard"}
 
 
 @dataclass(frozen=True)
@@ -116,19 +119,16 @@ def parse_wantlist(path: Path) -> list[Want]:
         if not line:
             continue
 
-        owned = False
-        if line.startswith("+"):
-            owned = True
-            line = line[1:].strip()
+        if normalize_name(line) in SECTION_HEADERS:
+            continue
 
+        owned = False
         quantity = 1
         match = re.match(r"^(?:(\d+)\s*x?\s+)(.+)$", line, flags=re.IGNORECASE)
         if match:
+            owned = True
             quantity = int(match.group(1))
             line = match.group(2).strip()
-            if line.startswith("+"):
-                owned = True
-                line = line[1:].strip()
 
         if not line:
             continue
@@ -140,6 +140,99 @@ def parse_wantlist(path: Path) -> list[Want]:
         wants.append(Want(display_name=line, lookup_key=key, quantity=quantity, line_no=line_no, owned=owned))
 
     return wants
+
+
+def synchronize_owned_cards(wantlists: list[WantList]) -> list[WantList]:
+    owned_keys = {want.lookup_key for wantlist in wantlists for want in wantlist.wants if want.owned}
+    if not owned_keys:
+        return wantlists
+
+    synchronized: list[WantList] = []
+    for wantlist in wantlists:
+        wants = [replace(want, owned=True) if want.lookup_key in owned_keys else want for want in wantlist.wants]
+        synchronized.append(replace(wantlist, wants=wants))
+    return synchronized
+
+
+def deck_display_name(wantlist: WantList) -> str:
+    return wantlist.path.stem
+
+
+def slugify(value: str) -> str:
+    value = normalize_name(value, fold_accents=True)
+    value = re.sub(r"[^a-z0-9]+", "-", value).strip("-")
+    return value or "deck"
+
+
+def shared_deck_tags(wantlists: list[WantList]) -> dict[str, list[str]]:
+    tags_by_key: dict[str, list[str]] = {}
+    for wantlist in wantlists:
+        name = deck_display_name(wantlist)
+        for want in wantlist.wants:
+            tags_by_key.setdefault(want.lookup_key, [])
+            if name not in tags_by_key[want.lookup_key]:
+                tags_by_key[want.lookup_key].append(name)
+    return {key: names for key, names in tags_by_key.items() if len(names) > 1}
+
+
+def split_comment(raw_line: str) -> tuple[str, str]:
+    if "#" not in raw_line:
+        return raw_line, ""
+    body, comment = raw_line.split("#", 1)
+    return body, f"#{comment}"
+
+
+def line_card_key(raw_line: str) -> str | None:
+    body, _ = split_comment(raw_line)
+    line = body.strip()
+    if not line or normalize_name(line) in SECTION_HEADERS:
+        return None
+
+    match = re.match(r"^(?:(\d+)\s*x?\s+)(.+)$", line, flags=re.IGNORECASE)
+    if match:
+        line = match.group(2).strip()
+
+    return normalize_name(line) if line else None
+
+
+def write_owned_cards_to_deck_sources(wantlists: list[WantList]) -> list[Path]:
+    updated_paths: list[Path] = []
+    owned_by_path = {
+        wantlist.path: {want.lookup_key: want for want in wantlist.wants if want.owned}
+        for wantlist in wantlists
+    }
+
+    for wantlist in wantlists:
+        owned_by_key = owned_by_path[wantlist.path]
+        if not owned_by_key:
+            continue
+
+        changed = False
+        new_lines: list[str] = []
+        for raw_line in wantlist.path.read_text(encoding="utf-8").splitlines():
+            body, comment = split_comment(raw_line)
+            key = line_card_key(raw_line)
+            want = owned_by_key.get(key or "")
+            if want is None:
+                new_lines.append(raw_line)
+                continue
+
+            stripped = body.strip()
+            has_quantity = bool(re.match(r"^\d+\s*x?\s+", stripped, flags=re.IGNORECASE))
+            if has_quantity:
+                new_lines.append(raw_line)
+                continue
+
+            indent = body[: len(body) - len(body.lstrip())]
+            spacing = " " if comment and not comment.startswith(" ") else ""
+            new_lines.append(f"{indent}{want.quantity} {stripped}{spacing}{comment}")
+            changed = True
+
+        if changed:
+            wantlist.path.write_text("\n".join(new_lines) + "\n", encoding="utf-8")
+            updated_paths.append(wantlist.path)
+
+    return updated_paths
 
 
 def iter_scryfall_cards(path: Path, chunk_size: int = 1024 * 1024) -> Iterable[dict[str, Any]]:
@@ -432,18 +525,38 @@ def wantlist_total(wants: list[Want], matches: dict[str, Match]) -> Decimal:
     )
 
 
+def total_cards(wants: list[Want]) -> int:
+    return sum(want.quantity for want in wants)
+
+
+def wanted_cards(wants: list[Want]) -> int:
+    return sum(want.quantity for want in wants if not want.owned)
+
+
+def owned_cards(wants: list[Want]) -> int:
+    return sum(want.quantity for want in wants if want.owned)
+
+
+def card_count_label(wants: list[Want]) -> str:
+    return f"{total_cards(wants)} cards | {wanted_cards(wants)} wanted | {owned_cards(wants)} owned"
+
+
 def total_label(label: str, total: Decimal, exchange_rate: ExchangeRate) -> str:
     return f"{label} | total {format_prices(total, exchange_rate)}"
 
 
 def write_text_output(path: Path, wantlists: list[WantList], matches: dict[str, Match], exchange_rate: ExchangeRate) -> None:
     lines: list[str] = []
+    tags_by_key = shared_deck_tags(wantlists)
     lines.append(f"EUR/CZK: {exchange_rate.eur_to_czk} ({exchange_rate.source})")
     lines.append("")
 
     for wantlist in wantlists:
         grouped, missing = group_matches(wantlist.wants, matches)
-        lines.append(f"{wantlist.path.name} | total {format_prices(wantlist_total(wantlist.wants, matches), exchange_rate)}")
+        lines.append(
+            f"{deck_display_name(wantlist)} | {card_count_label(wantlist.wants)} | "
+            f"total {format_prices(wantlist_total(wantlist.wants, matches), exchange_rate)}"
+        )
         lines.append("")
 
         for label, _, _ in CATEGORIES:
@@ -454,24 +567,55 @@ def write_text_output(path: Path, wantlists: list[WantList], matches: dict[str, 
             visible_items = [item for item in items if not item[0].owned]
             owned_items = [item for item in items if item[0].owned]
             for want, match in visible_items + owned_items:
-                qty = f"{want.quantity}x " if want.quantity != 1 else ""
-                owned = "+ " if want.owned else ""
-                lines.append(f"{owned}{qty}{want.display_name} > {format_prices(match.price, exchange_rate)}")
+                qty = f"{want.quantity}x " if want.owned or want.quantity != 1 else ""
+                tags = tags_by_key.get(want.lookup_key, [])
+                tag_suffix = f" [{', '.join(tags)}]" if tags else ""
+                lines.append(f"{qty}{want.display_name}{tag_suffix} > {format_prices(match.price, exchange_rate)}")
             lines.append("")
 
         if missing:
             lines.append("not found / no EUR price")
             for want in missing:
-                qty = f"{want.quantity}x " if want.quantity != 1 else ""
-                owned = "+ " if want.owned else ""
-                lines.append(f"{owned}{qty}{want.display_name}")
+                qty = f"{want.quantity}x " if want.owned or want.quantity != 1 else ""
+                tags = tags_by_key.get(want.lookup_key, [])
+                tag_suffix = f" [{', '.join(tags)}]" if tags else ""
+                lines.append(f"{qty}{want.display_name}{tag_suffix}")
             lines.append("")
 
     path.write_text("\n".join(lines), encoding="utf-8")
 
 
-def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, Match], exchange_rate: ExchangeRate) -> None:
+def write_html_output(
+    path: Path,
+    wantlists: list[WantList],
+    matches: dict[str, Match],
+    exchange_rate: ExchangeRate,
+    *,
+    tag_wantlists: list[WantList] | None = None,
+) -> None:
     wantlist_sections: list[str] = []
+    tags_by_key = shared_deck_tags(tag_wantlists or wantlists)
+    deck_ids: dict[Path, str] = {}
+    used_deck_ids: set[str] = set()
+    for wantlist in wantlists:
+        base_deck_id = slugify(deck_display_name(wantlist))
+        deck_id = base_deck_id
+        if deck_id in used_deck_ids:
+            suffix = 2
+            while f"{base_deck_id}-{suffix}" in used_deck_ids:
+                suffix += 1
+            deck_id = f"{base_deck_id}-{suffix}"
+        used_deck_ids.add(deck_id)
+        deck_ids[wantlist.path] = deck_id
+
+    deck_tabs = []
+    for index, wantlist in enumerate(wantlists):
+        deck_id = html.escape(deck_ids[wantlist.path], quote=True)
+        selected = "true" if index == 0 else "false"
+        deck_tabs.append(
+            f'<button class="deck-tab" type="button" role="tab" aria-selected="{selected}" '
+            f'data-deck="{deck_id}">{html.escape(deck_display_name(wantlist))}</button>'
+        )
 
     for wantlist in wantlists:
         grouped, missing = group_matches(wantlist.wants, matches)
@@ -485,15 +629,16 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
             visible_items = [item for item in items if not item[0].owned]
             owned_items = [item for item in items if item[0].owned]
             for want, match in visible_items + owned_items:
-                qty = f"{want.quantity}x " if want.quantity != 1 else ""
-                owned = "+ " if want.owned else ""
-                name = html.escape(f"{owned}{qty}{want.display_name}")
+                qty = f"{want.quantity}x " if want.owned or want.quantity != 1 else ""
+                name = html.escape(f"{qty}{want.display_name}")
+                tags = "".join(f'<span>{html.escape(tag)}</span>' for tag in tags_by_key.get(want.lookup_key, []))
+                tags_html = f'<span class="deck-tags">{tags}</span>' if tags else ""
                 price = html.escape(format_prices(match.price, exchange_rate))
                 image = html.escape(match.image_url, quote=True)
                 owned_class = " owned" if want.owned else ""
                 rows.append(
                     f'<div class="card-row{owned_class}" tabindex="0" data-image="{image}">'
-                    f'<span>{name}</span><span class="price-value">{price}</span></div>'
+                    f'<span class="card-name">{name}{tags_html}</span><span class="price-value">{price}</span></div>'
                 )
             category_sections.append(
                 f'<section class="price-band"><h3><span>{html.escape(label)}</span>'
@@ -504,16 +649,22 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
         if missing:
             missing_rows = []
             for want in missing:
-                qty = f"{want.quantity}x " if want.quantity != 1 else ""
-                owned = "+ " if want.owned else ""
+                qty = f"{want.quantity}x " if want.owned or want.quantity != 1 else ""
                 owned_class = " owned" if want.owned else ""
-                missing_rows.append(f'<div class="missing-row{owned_class}">{html.escape(owned + qty + want.display_name)}</div>')
+                tags = "".join(f'<span>{html.escape(tag)}</span>' for tag in tags_by_key.get(want.lookup_key, []))
+                tags_html = f'<span class="deck-tags">{tags}</span>' if tags else ""
+                missing_rows.append(
+                    f'<div class="missing-row{owned_class}"><span class="card-name">'
+                    f'{html.escape(qty + want.display_name)}{tags_html}</span></div>'
+                )
             category_sections.append(
                 '<section class="price-band"><h3>not found / no EUR price</h3>'
                 f'<div class="card-list">{"".join(missing_rows)}</div></section>'
             )
         wantlist_sections.append(
-            f'<section class="wantlist-section"><h2>{html.escape(wantlist.path.name)}'
+            f'<section class="wantlist-section" id="deck-{html.escape(deck_ids[wantlist.path], quote=True)}" '
+            f'data-deck="{html.escape(deck_ids[wantlist.path], quote=True)}"><h2>{html.escape(deck_display_name(wantlist))}'
+            f'<span>{html.escape(card_count_label(wantlist.wants))}</span>'
             f'<span class="price-value">{html.escape(format_prices(wantlist_total(wantlist.wants, matches), exchange_rate))}</span></h2>'
             f'{"".join(category_sections)}</section>'
         )
@@ -550,10 +701,29 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
       line-height: 1.35;
     }}
 
+    .app-header {{
+      position: fixed;
+      inset: 0 0 auto;
+      z-index: 10;
+      border-bottom: 1px solid var(--line);
+      background: rgba(246, 243, 237, 0.96);
+      backdrop-filter: blur(12px);
+    }}
+
+    .header-inner {{
+      width: min(1180px, calc(100% - 32px));
+      margin: 0 auto;
+      padding: 12px 0;
+      display: grid;
+      grid-template-columns: minmax(180px, auto) minmax(0, 1fr) auto;
+      gap: 16px;
+      align-items: center;
+    }}
+
     main {{
       width: min(1180px, calc(100% - 32px));
       margin: 0 auto;
-      padding: 28px 0 48px;
+      padding: 116px 0 48px;
       display: grid;
       grid-template-columns: minmax(0, 1fr) 340px;
       gap: 24px;
@@ -568,13 +738,13 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
     }}
 
     .rate-note {{
-      margin: 0 0 22px;
+      margin: 0;
       color: var(--muted);
       font-size: 13px;
     }}
 
     .toolbar {{
-      margin: 0 0 18px;
+      margin: 0;
       display: flex;
       justify-content: flex-start;
     }}
@@ -595,6 +765,40 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
     .toolbar button:focus {{
       background: var(--accent-soft);
       outline: 0;
+    }}
+
+    .deck-tabs {{
+      min-width: 0;
+      display: flex;
+      gap: 8px;
+      overflow-x: auto;
+      padding: 2px;
+      scrollbar-width: thin;
+    }}
+
+    .deck-tab {{
+      flex: 0 0 auto;
+      min-height: 36px;
+      padding: 7px 12px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: #ffffff;
+      color: var(--ink);
+      font: inherit;
+      font-weight: 700;
+      cursor: pointer;
+    }}
+
+    .deck-tab:hover,
+    .deck-tab:focus {{
+      background: var(--accent-soft);
+      outline: 0;
+    }}
+
+    .deck-tab[aria-selected="true"] {{
+      border-color: var(--accent);
+      background: var(--accent);
+      color: #ffffff;
     }}
 
     body.prices-hidden .price-value {{
@@ -650,6 +854,10 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
       margin-bottom: 30px;
     }}
 
+    .wantlist-section[hidden] {{
+      display: none;
+    }}
+
     .wantlist-section:first-of-type h2 {{
       margin-top: 0;
     }}
@@ -689,17 +897,37 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
       outline: 0;
     }}
 
-    .card-row span:first-child {{
+    .card-name {{
       min-width: 0;
       overflow-wrap: anywhere;
       font-weight: 560;
     }}
 
-    .card-row span:last-child {{
+    .card-row .price-value {{
       color: var(--muted);
       font-variant-numeric: tabular-nums;
       white-space: nowrap;
       text-align: right;
+    }}
+
+    .deck-tags {{
+      display: inline-flex;
+      flex-wrap: wrap;
+      gap: 4px;
+      margin-left: 8px;
+      vertical-align: middle;
+    }}
+
+    .deck-tags span {{
+      display: inline-block;
+      padding: 1px 6px;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      background: #f8fafc;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 700;
+      line-height: 1.5;
     }}
 
     .card-row:hover,
@@ -713,7 +941,7 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
       color: #166534;
     }}
 
-    .card-row.owned span:last-child {{
+    .card-row.owned .price-value {{
       color: #2f7d46;
     }}
 
@@ -804,10 +1032,24 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
     }}
 
     @media (max-width: 860px) {{
+      .header-inner {{
+        width: min(100% - 20px, 720px);
+        grid-template-columns: 1fr;
+        gap: 10px;
+      }}
+
+      .toolbar {{
+        justify-content: stretch;
+      }}
+
+      .toolbar button {{
+        width: 100%;
+      }}
+
       main {{
         grid-template-columns: 1fr;
         width: min(100% - 20px, 720px);
-        padding-top: 18px;
+        padding-top: 178px;
       }}
 
       h1 {{
@@ -834,7 +1076,7 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
         min-height: 48px;
       }}
 
-      .card-row span:last-child {{
+      .card-row .price-value {{
         text-align: left;
         white-space: normal;
       }}
@@ -846,13 +1088,22 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
   </style>
 </head>
 <body class="prices-hidden">
-  <main>
-    <div class="bands">
-      <h1>MTG Want List Prices</h1>
-      <p class="rate-note">EUR/CZK: {html.escape(str(exchange_rate.eur_to_czk))} ({html.escape(exchange_rate.source)})</p>
+  <header class="app-header">
+    <div class="header-inner">
+      <div>
+        <h1>MTG Want List Prices</h1>
+        <p class="rate-note">EUR/CZK: {html.escape(str(exchange_rate.eur_to_czk))} ({html.escape(exchange_rate.source)})</p>
+      </div>
+      <nav class="deck-tabs" role="tablist" aria-label="Decks">
+        {"".join(deck_tabs)}
+      </nav>
       <div class="toolbar">
         <button type="button" id="price-toggle" aria-pressed="false">Show Scryfall prices</button>
       </div>
+    </div>
+  </header>
+  <main>
+    <div class="bands">
       {"".join(wantlist_sections)}
     </div>
     <aside class="preview" aria-live="polite">
@@ -875,6 +1126,8 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
     const mobileImage = document.querySelector("#mobile-card-preview");
     const mobileClose = document.querySelector("#mobile-preview button");
     const priceToggle = document.querySelector("#price-toggle");
+    const deckTabs = Array.from(document.querySelectorAll(".deck-tab"));
+    const deckSections = Array.from(document.querySelectorAll(".wantlist-section"));
 
     function setPricesVisible(visible) {{
       document.body.classList.toggle("prices-hidden", !visible);
@@ -906,6 +1159,30 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
       document.body.style.overflow = "";
     }}
 
+    function clearPreview() {{
+      image.removeAttribute("src");
+      image.alt = "";
+      preview.classList.remove("has-image");
+    }}
+
+    function setActiveDeck(deck, updateHash = true) {{
+      const target = deckSections.some((section) => section.dataset.deck === deck)
+        ? deck
+        : deckSections[0]?.dataset.deck;
+      if (!target) return;
+
+      deckTabs.forEach((tab) => {{
+        tab.setAttribute("aria-selected", tab.dataset.deck === target ? "true" : "false");
+      }});
+      deckSections.forEach((section) => {{
+        section.hidden = section.dataset.deck !== target;
+      }});
+      clearPreview();
+      if (updateHash) {{
+        history.replaceState(null, "", `#${{target}}`);
+      }}
+    }}
+
     document.querySelectorAll(".card-row").forEach((row) => {{
       row.addEventListener("pointerenter", () => showCard(row));
       row.addEventListener("focus", () => showCard(row));
@@ -919,6 +1196,14 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
       setPricesVisible(document.body.classList.contains("prices-hidden"));
     }});
 
+    deckTabs.forEach((tab) => {{
+      tab.addEventListener("click", () => setActiveDeck(tab.dataset.deck));
+    }});
+
+    window.addEventListener("hashchange", () => {{
+      setActiveDeck(decodeURIComponent(location.hash.slice(1)), false);
+    }});
+
     mobileClose.addEventListener("click", closeMobileCard);
     mobilePreview.addEventListener("click", (event) => {{
       if (event.target === mobilePreview) closeMobileCard();
@@ -926,6 +1211,8 @@ def write_html_output(path: Path, wantlists: list[WantList], matches: dict[str, 
     document.addEventListener("keydown", (event) => {{
       if (event.key === "Escape") closeMobileCard();
     }});
+
+    setActiveDeck(decodeURIComponent(location.hash.slice(1)), false);
   </script>
 </body>
 </html>
@@ -954,6 +1241,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument("filenames", nargs="*", type=Path, help="Plain-text want list file(s)")
     parser.add_argument("--dataset", default=DEFAULT_DATASET, type=Path, help="Scryfall all-cards JSON file")
     parser.add_argument("--wantlist", default=DEFAULT_WANTLIST, type=Path, help="Plain-text want list")
+    parser.add_argument("--decks-dir", default=DEFAULT_DECKS_DIR, type=Path, help="Directory of deck files used when no filenames are provided")
     parser.add_argument("--output", default=DEFAULT_OUTPUT, type=Path, help="Output basename or file. Writes both .html and .txt.")
     parser.add_argument("--eur-czk", help="Manual EUR to CZK rate. If omitted, the script fetches the ECB daily rate.")
     parser.add_argument("--include-unreleased", action="store_true", help="Allow cards with release dates after today")
@@ -961,9 +1249,15 @@ def build_parser() -> argparse.ArgumentParser:
     return parser
 
 
+def default_deck_paths(decks_dir: Path) -> list[Path]:
+    if not decks_dir.exists():
+        return []
+    return sorted(path for path in decks_dir.iterdir() if path.is_file() and not path.name.startswith("."))
+
+
 def main(argv: list[str]) -> int:
     args = build_parser().parse_args(argv)
-    wantlist_paths = args.filenames or [args.wantlist]
+    wantlist_paths = args.filenames or default_deck_paths(args.decks_dir) or [args.wantlist]
 
     if not args.dataset.exists():
         print(f"Dataset not found: {args.dataset}", file=sys.stderr)
@@ -980,7 +1274,10 @@ def main(argv: list[str]) -> int:
         print("Use --eur-czk RATE to provide it manually.", file=sys.stderr)
         return 2
 
-    wantlists = [WantList(path=wantlist_path, wants=parse_wantlist(wantlist_path)) for wantlist_path in wantlist_paths]
+    wantlists = synchronize_owned_cards(
+        [WantList(path=wantlist_path, wants=parse_wantlist(wantlist_path)) for wantlist_path in wantlist_paths]
+    )
+    updated_deck_sources = write_owned_cards_to_deck_sources(wantlists)
     matches, scanned = find_matches(
         args.dataset,
         wantlists,
@@ -994,6 +1291,10 @@ def main(argv: list[str]) -> int:
     print(f"EUR/CZK: {exchange_rate.eur_to_czk} ({exchange_rate.source}).")
     print(f"Scanned {scanned} cards.")
     print(f"Matched {total_matches} of {total_wants} want-list entries.")
+    if updated_deck_sources:
+        print("Updated deck sources:")
+        for updated_path in updated_deck_sources:
+            print(f"- {updated_path}")
     print(f"Wrote {html_path}.")
     print(f"Wrote {text_path}.")
     return 0
