@@ -561,22 +561,22 @@ def write_text_output(path: Path, wantlists: list[WantList], matches: dict[str, 
 
         for label, _, _ in CATEGORIES:
             items = sorted(grouped[label], key=lambda item: (item[1].price, item[0].display_name.casefold()))
-            if not items:
+            visible_items = [item for item in items if not item[0].owned]
+            if not visible_items:
                 continue
             lines.append(total_label(label, line_total(items), exchange_rate))
-            visible_items = [item for item in items if not item[0].owned]
-            owned_items = [item for item in items if item[0].owned]
-            for want, match in visible_items + owned_items:
-                qty = f"{want.quantity}x " if want.owned or want.quantity != 1 else ""
+            for want, match in visible_items:
+                qty = f"{want.quantity}x " if want.quantity != 1 else ""
                 tags = tags_by_key.get(want.lookup_key, [])
                 tag_suffix = f" [{', '.join(tags)}]" if tags else ""
                 lines.append(f"{qty}{want.display_name}{tag_suffix} > {format_prices(match.price, exchange_rate)}")
             lines.append("")
 
-        if missing:
+        visible_missing = [want for want in missing if not want.owned]
+        if visible_missing:
             lines.append("not found / no EUR price")
-            for want in missing:
-                qty = f"{want.quantity}x " if want.owned or want.quantity != 1 else ""
+            for want in visible_missing:
+                qty = f"{want.quantity}x " if want.quantity != 1 else ""
                 tags = tags_by_key.get(want.lookup_key, [])
                 tag_suffix = f" [{', '.join(tags)}]" if tags else ""
                 lines.append(f"{qty}{want.display_name}{tag_suffix}")

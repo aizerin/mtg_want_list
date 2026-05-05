@@ -1,309 +1,99 @@
-EUR/CZK: 24.366 (ECB 2026-04-30)
+EUR/CZK: 24.393 (ECB 2026-05-04)
 
-duel-grist | 99 cards | 59 wanted | 40 owned | total 577.76 eur / 14077.70 CZK
+duel-slimfoot | 100 cards | 75 wanted | 25 owned | total 1197.63 eur / 29213.79 CZK
 
-0-5 eur | total 46.12 eur / 1123.76 CZK
-Grief [duel-grist, duel-slimfoot] > 0.02 eur / 0.49 CZK
-Gilded Goose > 0.22 eur / 5.36 CZK
-Accursed Marauder [duel-grist, duel-slimfoot] > 0.29 eur / 7.07 CZK
-Bitter Triumph > 0.44 eur / 10.72 CZK
-Arbor Elf [duel-grist, duel-slimfoot] > 0.50 eur / 12.18 CZK
-Bloodghast > 0.53 eur / 12.91 CZK
-Haywire Mite > 0.55 eur / 13.40 CZK
-Cut Down > 0.65 eur / 15.84 CZK
-Wight of the Reliquary [duel-grist, duel-slimfoot] > 0.74 eur / 18.03 CZK
-Chthonian Nightmare > 0.80 eur / 19.49 CZK
-Lively Dirge > 0.83 eur / 20.22 CZK
-Desperate Plea > 0.87 eur / 21.20 CZK
-Utopia Sprawl [duel-grist, duel-slimfoot] > 1.10 eur / 26.80 CZK
-Abrupt Decay [duel-grist, duel-slimfoot] > 1.22 eur / 29.73 CZK
-Keen-Eyed Curator [duel-grist, duel-slimfoot] > 1.24 eur / 30.21 CZK
-Hogaak, Arisen Necropolis > 1.30 eur / 31.68 CZK
-Pendelhaven > 1.54 eur / 37.52 CZK
-Boreal Druid > 1.61 eur / 39.23 CZK
-Blooming Marsh [duel-grist, duel-slimfoot] > 1.67 eur / 40.69 CZK
-Boggart Trawler > 1.71 eur / 41.67 CZK
-Deathcap Glade > 1.75 eur / 42.64 CZK
-Frenzied Baloth [duel-grist, duel-slimfoot] > 1.92 eur / 46.78 CZK
-Fyndhorn Elves [duel-grist, duel-slimfoot] > 2.24 eur / 54.58 CZK
-Dryad Arbor > 2.39 eur / 58.23 CZK
-Masked Vandal > 2.56 eur / 62.38 CZK
-Emperor of Bones [duel-grist, duel-slimfoot] > 2.64 eur / 64.33 CZK
-Living Death > 2.77 eur / 67.49 CZK
-Chord of Calling > 3.59 eur / 87.47 CZK
-Springheart Nantuko > 3.63 eur / 88.45 CZK
-Fell the Profane > 4.80 eur / 116.96 CZK
-3x Forest [duel-grist, duel-slimfoot, edh-skullbriar] > 0.02 eur / 0.49 CZK
-3x Swamp [duel-grist, duel-slimfoot, edh-skullbriar] > 0.02 eur / 0.49 CZK
-1x Duress [duel-grist, duel-slimfoot] > 0.06 eur / 1.46 CZK
-1x Llanowar Elves [duel-grist, duel-slimfoot, edh-skullbriar] > 0.12 eur / 2.92 CZK
-1x Command Tower [duel-grist, duel-slimfoot, edh-skullbriar] > 0.13 eur / 3.17 CZK
-1x Lethal Scheme > 0.22 eur / 5.36 CZK
-1x Skyfisher Spider > 0.23 eur / 5.60 CZK
-1x Tectonic Edge > 0.23 eur / 5.60 CZK
-1x Wild Growth [duel-grist, duel-slimfoot] > 0.27 eur / 6.58 CZK
-1x Massacre Girl > 0.29 eur / 7.07 CZK
-1x Long Goodbye > 0.30 eur / 7.31 CZK
-1x Woodland Cemetery [duel-grist, edh-skullbriar] > 0.36 eur / 8.77 CZK
-1x Unearth [duel-grist, duel-slimfoot, edh-skullbriar] > 0.45 eur / 10.96 CZK
-1x Inquisition of Kozilek > 0.46 eur / 11.21 CZK
-1x Elvish Mystic [duel-grist, duel-slimfoot] > 0.51 eur / 12.43 CZK
-1x Eternal Witness > 0.65 eur / 15.84 CZK
-1x Fatal Push [duel-grist, duel-slimfoot] > 0.81 eur / 19.74 CZK
-1x Bojuka Bog [duel-grist, edh-skullbriar] > 0.95 eur / 23.15 CZK
-1x Elves of Deep Shadow [duel-grist, duel-slimfoot, edh-skullbriar] > 1.30 eur / 31.68 CZK
-1x Skullclamp [duel-grist, duel-slimfoot] > 3.76 eur / 91.62 CZK
-1x Endurance [duel-grist, duel-slimfoot] > 4.47 eur / 108.92 CZK
-
-5-10 eur | total 70.43 eur / 1716.10 CZK
-Nurturing Peatland > 5.11 eur / 124.51 CZK
-Shifting Woodland > 5.82 eur / 141.81 CZK
-Contamination > 6.19 eur / 150.83 CZK
-Metamorphosis Fanatic > 6.61 eur / 161.06 CZK
-Deathrite Shaman [duel-grist, duel-slimfoot] > 6.70 eur / 163.25 CZK
-Fanatic of Rhonas > 6.97 eur / 169.83 CZK
-Wastewood Verge [duel-grist, duel-slimfoot] > 7.45 eur / 181.53 CZK
-Takenuma, Abandoned Mire > 8.33 eur / 202.97 CZK
-Yavimaya, Cradle of Growth > 8.37 eur / 203.94 CZK
-Diabolic Intent > 8.88 eur / 216.37 CZK
-1x Darkbore Pathway > 5.19 eur / 126.46 CZK
-1x Dauthi Voidwalker [duel-grist, duel-slimfoot] > 5.35 eur / 130.36 CZK
-1x Thoughtseize [duel-grist, duel-slimfoot] > 6.73 eur / 163.98 CZK
-1x Birds of Paradise [duel-grist, duel-slimfoot, edh-skullbriar] > 7.12 eur / 173.49 CZK
-1x Overgrown Tomb [duel-grist, duel-slimfoot, edh-skullbriar] > 7.16 eur / 174.46 CZK
-1x Toxic Deluge [duel-grist, edh-skullbriar] > 7.17 eur / 174.70 CZK
-1x Windswept Heath [duel-grist, duel-slimfoot, edh-skullbriar] > 9.54 eur / 232.45 CZK
-
-10-50 eur | total 399.76 eur / 9740.55 CZK
-Formidable Speaker [duel-grist, duel-slimfoot] > 11.66 eur / 284.11 CZK
-Underground Mortuary [duel-grist, duel-slimfoot] > 13.26 eur / 323.09 CZK
-Green Sun's Zenith > 15.04 eur / 366.46 CZK
-Wooded Foothills [duel-grist, duel-slimfoot] > 15.11 eur / 368.17 CZK
-Delighted Halfling [duel-grist, duel-slimfoot] > 15.75 eur / 383.76 CZK
-Polluted Delta [duel-grist, duel-slimfoot] > 15.75 eur / 383.76 CZK
-Barrowgoyf [duel-grist, duel-slimfoot] > 16.27 eur / 396.43 CZK
-Icetill Explorer > 19.11 eur / 465.63 CZK
-Sephiroth, Fabled SOLDIER > 21.21 eur / 516.80 CZK
-Phyrexian Tower [duel-grist, duel-slimfoot] > 21.85 eur / 532.40 CZK
-Misty Rainforest [duel-grist, duel-slimfoot] > 23.02 eur / 560.91 CZK
-Opposition Agent [duel-grist, duel-slimfoot] > 23.82 eur / 580.40 CZK
-Yawgmoth, Thran Physician > 24.14 eur / 588.20 CZK
-Orcish Bowmasters [duel-grist, duel-slimfoot] > 29.51 eur / 719.04 CZK
-Urborg, Tomb of Yawgmoth > 31.61 eur / 770.21 CZK
-Boseiju, Who Endures [duel-grist, duel-slimfoot] > 31.62 eur / 770.45 CZK
-Prismatic Vista [duel-grist, duel-slimfoot] > 32.91 eur / 801.89 CZK
-Urza's Saga > 38.12 eur / 928.83 CZK
-1x Worldly Tutor > 15.15 eur / 369.14 CZK
-1x Bloodstained Mire [duel-grist, duel-slimfoot, edh-skullbriar] > 15.16 eur / 369.39 CZK
-1x Verdant Catacombs [duel-grist, duel-slimfoot, edh-skullbriar] > 20.19 eur / 491.95 CZK
-1x Marsh Flats [duel-grist, duel-slimfoot] > 22.05 eur / 537.27 CZK
-1x Demonic Tutor [duel-grist, duel-slimfoot] > 36.24 eur / 883.02 CZK
-
-50-100 eur | total 61.45 eur / 1497.29 CZK
-Recurring Nightmare > 61.45 eur / 1497.29 CZK
-1x Volrath's Stronghold > 85.20 eur / 2075.98 CZK
-
-200+ eur | total 0.00 eur / 0.00 CZK
-1x Bayou [duel-grist, duel-slimfoot] > 257.99 eur / 6286.18 CZK
-1x Survival of the Fittest [duel-grist, duel-slimfoot] > 328.75 eur / 8010.32 CZK
-
-duel-slimfoot | 100 cards | 75 wanted | 25 owned | total 1197.63 eur / 29181.45 CZK
-
-0-5 eur | total 65.46 eur / 1595.00 CZK
-Grief [duel-grist, duel-slimfoot] > 0.02 eur / 0.49 CZK
+0-5 eur | total 65.46 eur / 1596.77 CZK
+Grief > 0.02 eur / 0.49 CZK
 Mountain > 0.02 eur / 0.49 CZK
-Oliphaunt > 0.12 eur / 2.92 CZK
+Oliphaunt > 0.12 eur / 2.93 CZK
 Scavenging Ooze > 0.18 eur / 4.39 CZK
-Ghostfire Slice > 0.23 eur / 5.60 CZK
-Accursed Marauder [duel-grist, duel-slimfoot] > 0.29 eur / 7.07 CZK
-Rootbound Crag > 0.30 eur / 7.31 CZK
-Carnage, Crimson Chaos > 0.42 eur / 10.23 CZK
-Umbral Collar Zealot > 0.44 eur / 10.72 CZK
-Arbor Elf [duel-grist, duel-slimfoot] > 0.50 eur / 12.18 CZK
-Troll of Khazad-dum > 0.70 eur / 17.06 CZK
-Wight of the Reliquary [duel-grist, duel-slimfoot] > 0.74 eur / 18.03 CZK
-Detective's Phoenix > 0.80 eur / 19.49 CZK
-Copperline Gorge > 0.82 eur / 19.98 CZK
-Lightning Bolt > 0.96 eur / 23.39 CZK
-Tersa Lightshatter > 0.96 eur / 23.39 CZK
-Utopia Sprawl [duel-grist, duel-slimfoot] > 1.10 eur / 26.80 CZK
-Abrupt Decay [duel-grist, duel-slimfoot] > 1.22 eur / 29.73 CZK
-Keen-Eyed Curator [duel-grist, duel-slimfoot] > 1.24 eur / 30.21 CZK
-Ignoble Hierarch > 1.32 eur / 32.16 CZK
-Blackcleave Cliffs > 1.51 eur / 36.79 CZK
-Dismember > 1.52 eur / 37.04 CZK
-Sundering Eruption > 1.54 eur / 37.52 CZK
-Fury > 1.66 eur / 40.45 CZK
-Blooming Marsh [duel-grist, duel-slimfoot] > 1.67 eur / 40.69 CZK
-Eldritch Evolution > 1.69 eur / 41.18 CZK
-Goblin Bombardment > 1.80 eur / 43.86 CZK
-Pyrogoyf > 1.88 eur / 45.81 CZK
-Frenzied Baloth [duel-grist, duel-slimfoot] > 1.92 eur / 46.78 CZK
-Fyndhorn Elves [duel-grist, duel-slimfoot] > 2.24 eur / 54.58 CZK
-Flare of Malice > 2.62 eur / 63.84 CZK
-Emperor of Bones [duel-grist, duel-slimfoot] > 2.64 eur / 64.33 CZK
-Slimefoot and Squee > 2.64 eur / 64.33 CZK
-Lazotep Quarry > 2.88 eur / 70.17 CZK
-Animate Dead > 3.45 eur / 84.06 CZK
-Minsc & Boo, Timeless Heroes > 3.78 eur / 92.10 CZK
-Mawloc > 4.01 eur / 97.71 CZK
-Headliner Scarlett > 4.27 eur / 104.04 CZK
-Thornspire Verge > 4.62 eur / 112.57 CZK
-Magus of the Moon > 4.74 eur / 115.49 CZK
-1x Forest [duel-grist, duel-slimfoot, edh-skullbriar] > 0.02 eur / 0.49 CZK
-1x Swamp [duel-grist, duel-slimfoot, edh-skullbriar] > 0.02 eur / 0.49 CZK
-1x Duress [duel-grist, duel-slimfoot] > 0.06 eur / 1.46 CZK
-1x Llanowar Elves [duel-grist, duel-slimfoot, edh-skullbriar] > 0.12 eur / 2.92 CZK
-1x Command Tower [duel-grist, duel-slimfoot, edh-skullbriar] > 0.13 eur / 3.17 CZK
-1x Wild Growth [duel-grist, duel-slimfoot] > 0.27 eur / 6.58 CZK
-1x Cankerbloom [duel-slimfoot, edh-skullbriar] > 0.28 eur / 6.82 CZK
-1x Unearth [duel-grist, duel-slimfoot, edh-skullbriar] > 0.45 eur / 10.96 CZK
-1x Elvish Mystic [duel-grist, duel-slimfoot] > 0.51 eur / 12.43 CZK
-1x Llanowar Wastes [duel-slimfoot, edh-skullbriar] > 0.75 eur / 18.27 CZK
-1x Fatal Push [duel-grist, duel-slimfoot] > 0.81 eur / 19.74 CZK
-1x Elves of Deep Shadow [duel-grist, duel-slimfoot, edh-skullbriar] > 1.30 eur / 31.68 CZK
-1x Skullclamp [duel-grist, duel-slimfoot] > 3.76 eur / 91.62 CZK
-1x Endurance [duel-grist, duel-slimfoot] > 4.47 eur / 108.92 CZK
+Ghostfire Slice > 0.23 eur / 5.61 CZK
+Accursed Marauder > 0.29 eur / 7.07 CZK
+Rootbound Crag > 0.30 eur / 7.32 CZK
+Carnage, Crimson Chaos > 0.42 eur / 10.25 CZK
+Umbral Collar Zealot > 0.44 eur / 10.73 CZK
+Arbor Elf > 0.50 eur / 12.20 CZK
+Troll of Khazad-dum > 0.70 eur / 17.08 CZK
+Wight of the Reliquary > 0.74 eur / 18.05 CZK
+Detective's Phoenix > 0.80 eur / 19.51 CZK
+Copperline Gorge > 0.82 eur / 20.00 CZK
+Lightning Bolt > 0.96 eur / 23.42 CZK
+Tersa Lightshatter > 0.96 eur / 23.42 CZK
+Utopia Sprawl > 1.10 eur / 26.83 CZK
+Abrupt Decay > 1.22 eur / 29.76 CZK
+Keen-Eyed Curator > 1.24 eur / 30.25 CZK
+Ignoble Hierarch > 1.32 eur / 32.20 CZK
+Blackcleave Cliffs > 1.51 eur / 36.83 CZK
+Dismember > 1.52 eur / 37.08 CZK
+Sundering Eruption > 1.54 eur / 37.57 CZK
+Fury > 1.66 eur / 40.49 CZK
+Blooming Marsh > 1.67 eur / 40.74 CZK
+Eldritch Evolution > 1.69 eur / 41.22 CZK
+Goblin Bombardment > 1.80 eur / 43.91 CZK
+Pyrogoyf > 1.88 eur / 45.86 CZK
+Frenzied Baloth > 1.92 eur / 46.83 CZK
+Fyndhorn Elves > 2.24 eur / 54.64 CZK
+Flare of Malice > 2.62 eur / 63.91 CZK
+Emperor of Bones > 2.64 eur / 64.40 CZK
+Slimefoot and Squee > 2.64 eur / 64.40 CZK
+Lazotep Quarry > 2.88 eur / 70.25 CZK
+Animate Dead > 3.45 eur / 84.16 CZK
+Minsc & Boo, Timeless Heroes > 3.78 eur / 92.21 CZK
+Mawloc > 4.01 eur / 97.82 CZK
+Headliner Scarlett > 4.27 eur / 104.16 CZK
+Thornspire Verge > 4.62 eur / 112.70 CZK
+Magus of the Moon > 4.74 eur / 115.62 CZK
 
-5-10 eur | total 83.37 eur / 2031.39 CZK
-Broadside Bombardiers > 5.64 eur / 137.42 CZK
-Abundant Countryside > 6.18 eur / 150.58 CZK
-Deathrite Shaman [duel-grist, duel-slimfoot] > 6.70 eur / 163.25 CZK
-Stomping Ground > 7.00 eur / 170.56 CZK
-Wastewood Verge [duel-grist, duel-slimfoot] > 7.45 eur / 181.53 CZK
-Blazemire Verge > 7.48 eur / 182.26 CZK
-Commercial District > 7.78 eur / 189.57 CZK
-Blood Crypt > 8.21 eur / 200.04 CZK
-Raucous Theater > 8.66 eur / 211.01 CZK
-Chaos Defiler > 9.06 eur / 220.76 CZK
-Fable of the Mirror-Breaker > 9.21 eur / 224.41 CZK
-1x Dauthi Voidwalker [duel-grist, duel-slimfoot] > 5.35 eur / 130.36 CZK
-1x Thoughtseize [duel-grist, duel-slimfoot] > 6.73 eur / 163.98 CZK
-1x Birds of Paradise [duel-grist, duel-slimfoot, edh-skullbriar] > 7.12 eur / 173.49 CZK
-1x Overgrown Tomb [duel-grist, duel-slimfoot, edh-skullbriar] > 7.16 eur / 174.46 CZK
-1x Windswept Heath [duel-grist, duel-slimfoot, edh-skullbriar] > 9.54 eur / 232.45 CZK
+5-10 eur | total 83.37 eur / 2033.64 CZK
+Broadside Bombardiers > 5.64 eur / 137.58 CZK
+Abundant Countryside > 6.18 eur / 150.75 CZK
+Deathrite Shaman > 6.70 eur / 163.43 CZK
+Stomping Ground > 7.00 eur / 170.75 CZK
+Wastewood Verge > 7.45 eur / 181.73 CZK
+Blazemire Verge > 7.48 eur / 182.46 CZK
+Commercial District > 7.78 eur / 189.78 CZK
+Blood Crypt > 8.21 eur / 200.27 CZK
+Raucous Theater > 8.66 eur / 211.24 CZK
+Chaos Defiler > 9.06 eur / 221.00 CZK
+Fable of the Mirror-Breaker > 9.21 eur / 224.66 CZK
 
-10-50 eur | total 456.44 eur / 11121.62 CZK
-Starting Town > 10.32 eur / 251.46 CZK
-Birthing Pod > 11.45 eur / 278.99 CZK
-Formidable Speaker [duel-grist, duel-slimfoot] > 11.66 eur / 284.11 CZK
-Multiversal Passage > 11.73 eur / 285.81 CZK
-Underground Mortuary [duel-grist, duel-slimfoot] > 13.26 eur / 323.09 CZK
-Hexing Squelcher > 13.33 eur / 324.80 CZK
-Wooded Foothills [duel-grist, duel-slimfoot] > 15.11 eur / 368.17 CZK
-Delighted Halfling [duel-grist, duel-slimfoot] > 15.75 eur / 383.76 CZK
-Polluted Delta [duel-grist, duel-slimfoot] > 15.75 eur / 383.76 CZK
-Barrowgoyf [duel-grist, duel-slimfoot] > 16.27 eur / 396.43 CZK
-Deadpool, Trading Card > 17.52 eur / 426.89 CZK
-Tainted Pact > 21.35 eur / 520.21 CZK
-Phyrexian Tower [duel-grist, duel-slimfoot] > 21.85 eur / 532.40 CZK
-Mana Confluence > 22.02 eur / 536.54 CZK
-Misty Rainforest [duel-grist, duel-slimfoot] > 23.02 eur / 560.91 CZK
-Opposition Agent [duel-grist, duel-slimfoot] > 23.82 eur / 580.40 CZK
-Scalding Tarn > 24.76 eur / 603.30 CZK
-Arid Mesa > 24.79 eur / 604.03 CZK
-Orcish Bowmasters [duel-grist, duel-slimfoot] > 29.51 eur / 719.04 CZK
-Boseiju, Who Endures [duel-grist, duel-slimfoot] > 31.62 eur / 770.45 CZK
-Prismatic Vista [duel-grist, duel-slimfoot] > 32.91 eur / 801.89 CZK
-Badgermole Cub > 48.64 eur / 1185.16 CZK
-1x Bloodstained Mire [duel-grist, duel-slimfoot, edh-skullbriar] > 15.16 eur / 369.39 CZK
-1x Verdant Catacombs [duel-grist, duel-slimfoot, edh-skullbriar] > 20.19 eur / 491.95 CZK
-1x Marsh Flats [duel-grist, duel-slimfoot] > 22.05 eur / 537.27 CZK
-1x Demonic Tutor [duel-grist, duel-slimfoot] > 36.24 eur / 883.02 CZK
+10-50 eur | total 456.44 eur / 11133.94 CZK
+Starting Town > 10.32 eur / 251.74 CZK
+Birthing Pod > 11.45 eur / 279.30 CZK
+Formidable Speaker > 11.66 eur / 284.42 CZK
+Multiversal Passage > 11.73 eur / 286.13 CZK
+Underground Mortuary > 13.26 eur / 323.45 CZK
+Hexing Squelcher > 13.33 eur / 325.16 CZK
+Wooded Foothills > 15.11 eur / 368.58 CZK
+Delighted Halfling > 15.75 eur / 384.19 CZK
+Polluted Delta > 15.75 eur / 384.19 CZK
+Barrowgoyf > 16.27 eur / 396.87 CZK
+Deadpool, Trading Card > 17.52 eur / 427.37 CZK
+Tainted Pact > 21.35 eur / 520.79 CZK
+Phyrexian Tower > 21.85 eur / 532.99 CZK
+Mana Confluence > 22.02 eur / 537.13 CZK
+Misty Rainforest > 23.02 eur / 561.53 CZK
+Opposition Agent > 23.82 eur / 581.04 CZK
+Scalding Tarn > 24.76 eur / 603.97 CZK
+Arid Mesa > 24.79 eur / 604.70 CZK
+Orcish Bowmasters > 29.51 eur / 719.84 CZK
+Boseiju, Who Endures > 31.62 eur / 771.31 CZK
+Prismatic Vista > 32.91 eur / 802.77 CZK
+Badgermole Cub > 48.64 eur / 1186.48 CZK
 
-200+ eur | total 592.36 eur / 14433.44 CZK
-Badlands > 284.71 eur / 6937.24 CZK
-Taiga > 307.65 eur / 7496.20 CZK
-1x Bayou [duel-grist, duel-slimfoot] > 257.99 eur / 6286.18 CZK
-1x Survival of the Fittest [duel-grist, duel-slimfoot] > 328.75 eur / 8010.32 CZK
+200+ eur | total 592.36 eur / 14449.44 CZK
+Badlands > 284.71 eur / 6944.93 CZK
+Taiga > 307.65 eur / 7504.51 CZK
 
 edh-skullbriar | 100 cards | 0 wanted | 100 owned | total 0.00 eur / 0.00 CZK
 
-0-5 eur | total 0.00 eur / 0.00 CZK
-11x Forest [duel-grist, duel-slimfoot, edh-skullbriar] > 0.02 eur / 0.49 CZK
-8x Swamp [duel-grist, duel-slimfoot, edh-skullbriar] > 0.02 eur / 0.49 CZK
-1x Fully Grown > 0.06 eur / 1.46 CZK
-1x Snakeskin Veil > 0.08 eur / 1.95 CZK
-1x Duskfang Mentor > 0.11 eur / 2.68 CZK
-1x Hunter's Insight > 0.12 eur / 2.92 CZK
-1x Llanowar Elves [duel-grist, duel-slimfoot, edh-skullbriar] > 0.12 eur / 2.92 CZK
-1x Ordeal of Nylea > 0.12 eur / 2.92 CZK
-1x Command Tower [duel-grist, duel-slimfoot, edh-skullbriar] > 0.13 eur / 3.17 CZK
-1x Fireshrieker > 0.13 eur / 3.17 CZK
-1x Corpsejack Menace > 0.15 eur / 3.65 CZK
-1x Nesting Grounds > 0.15 eur / 3.65 CZK
-1x Infernal Grasp > 0.16 eur / 3.90 CZK
-1x Fangs of Kalonia > 0.19 eur / 4.63 CZK
-1x Rogue's Passage > 0.19 eur / 4.63 CZK
-1x Forgotten Ancient > 0.20 eur / 4.87 CZK
-1x Gift of the Viper > 0.20 eur / 4.87 CZK
-1x Hunter's Prowess > 0.21 eur / 5.12 CZK
-1x Winding Constrictor > 0.23 eur / 5.60 CZK
-1x Ruinous Intrusion > 0.24 eur / 5.85 CZK
-1x Arcane Signet > 0.25 eur / 6.09 CZK
-1x Cankerbloom [duel-slimfoot, edh-skullbriar] > 0.28 eur / 6.82 CZK
-1x Invigorating Surge > 0.34 eur / 8.28 CZK
-1x Snake Umbra > 0.36 eur / 8.77 CZK
-1x Woodland Cemetery [duel-grist, edh-skullbriar] > 0.36 eur / 8.77 CZK
-1x Ram Through > 0.37 eur / 9.02 CZK
-1x Visions of Dominance > 0.44 eur / 10.72 CZK
-1x Call of the Death-Dweller > 0.45 eur / 10.96 CZK
-1x Unearth [duel-grist, duel-slimfoot, edh-skullbriar] > 0.45 eur / 10.96 CZK
-1x Increasing Savagery > 0.47 eur / 11.45 CZK
-1x Skullbriar, the Walking Grave > 0.47 eur / 11.45 CZK
-1x Unexpected Fangs > 0.59 eur / 14.38 CZK
-1x Woodland Chasm > 0.59 eur / 14.38 CZK
-1x Sol Ring > 0.66 eur / 16.08 CZK
-1x Silkguard > 0.68 eur / 16.57 CZK
-1x Assassin's Trophy > 0.70 eur / 17.06 CZK
-1x Llanowar Wastes [duel-slimfoot, edh-skullbriar] > 0.75 eur / 18.27 CZK
-1x Return of the Wildspeaker > 0.75 eur / 18.27 CZK
-1x Hydra's Growth > 0.79 eur / 19.25 CZK
-1x Qarsi Revenant > 0.84 eur / 20.47 CZK
-1x Bojuka Bog [duel-grist, edh-skullbriar] > 0.95 eur / 23.15 CZK
-1x Swiftfoot Boots > 0.97 eur / 23.64 CZK
-1x Rancor > 1.01 eur / 24.61 CZK
-1x Reliquary Tower > 1.05 eur / 25.58 CZK
-1x Whispersilk Cloak > 1.09 eur / 26.56 CZK
-1x Kaya's Ghostform > 1.10 eur / 26.80 CZK
-1x Hardened Scales > 1.13 eur / 27.53 CZK
-1x Solidarity of Heroes > 1.26 eur / 30.70 CZK
-1x Elves of Deep Shadow [duel-grist, duel-slimfoot, edh-skullbriar] > 1.30 eur / 31.68 CZK
-1x Revitalizing Repast // Old-Growth Grove > 1.31 eur / 31.92 CZK
-1x Vines of Vastwood > 1.31 eur / 31.92 CZK
-1x Astarion's Thirst > 1.54 eur / 37.52 CZK
-1x Tyrite Sanctum > 1.63 eur / 39.72 CZK
-1x Well Rested > 2.16 eur / 52.63 CZK
-1x Not of This World > 2.30 eur / 56.04 CZK
-1x Canopy Cover > 2.59 eur / 63.11 CZK
-1x Tamiyo's Safekeeping > 2.71 eur / 66.03 CZK
-1x Belt of Giant Strength > 3.10 eur / 75.53 CZK
-1x Branching Evolution > 3.56 eur / 86.74 CZK
-1x Pip-Boy 3000 > 3.78 eur / 92.10 CZK
-1x Archdruid's Charm > 3.83 eur / 93.32 CZK
-1x Undergrowth Stadium > 4.12 eur / 100.39 CZK
-1x Slippery Bogbonder > 4.15 eur / 101.12 CZK
-1x Bala Ged Recovery // Bala Ged Sanctuary > 4.50 eur / 109.65 CZK
-1x Bear Umbra > 4.54 eur / 110.62 CZK
-1x Three Visits > 4.86 eur / 118.42 CZK
+want-other | 3 cards | 3 wanted | 0 owned | total 101.43 eur / 2474.18 CZK
 
-5-10 eur | total 0.00 eur / 0.00 CZK
-1x Mandate of Abaddon > 5.14 eur / 125.24 CZK
-1x Darkbore Pathway // Slitherbore Pathway > 5.19 eur / 126.46 CZK
-1x Plaza of Heroes > 6.34 eur / 154.48 CZK
-1x Birds of Paradise [duel-grist, duel-slimfoot, edh-skullbriar] > 7.12 eur / 173.49 CZK
-1x Overgrown Tomb [duel-grist, duel-slimfoot, edh-skullbriar] > 7.16 eur / 174.46 CZK
-1x Toxic Deluge [duel-grist, edh-skullbriar] > 7.17 eur / 174.70 CZK
-1x Power Fist > 8.20 eur / 199.80 CZK
-1x Windswept Heath [duel-grist, duel-slimfoot, edh-skullbriar] > 9.54 eur / 232.45 CZK
+5-10 eur | total 8.37 eur / 204.17 CZK
+Yavimaya, Cradle of Growth > 8.37 eur / 204.17 CZK
 
-10-50 eur | total 0.00 eur / 0.00 CZK
-1x Heroic Intervention > 10.61 eur / 258.52 CZK
-1x Court of Garenbrig > 11.83 eur / 288.25 CZK
-1x Kodama of the West Tree > 13.64 eur / 332.35 CZK
-1x Bloodstained Mire [duel-grist, duel-slimfoot, edh-skullbriar] > 15.16 eur / 369.39 CZK
-1x Shadowspear > 15.33 eur / 373.53 CZK
-1x Mithril Coat > 15.62 eur / 380.60 CZK
-1x Deadly Rollick > 16.90 eur / 411.79 CZK
-1x Verdant Catacombs [duel-grist, duel-slimfoot, edh-skullbriar] > 20.19 eur / 491.95 CZK
-1x The Ozolith > 31.23 eur / 760.95 CZK
+10-50 eur | total 31.61 eur / 771.06 CZK
+Urborg, Tomb of Yawgmoth > 31.61 eur / 771.06 CZK
+
+50-100 eur | total 61.45 eur / 1498.95 CZK
+Recurring Nightmare > 61.45 eur / 1498.95 CZK
