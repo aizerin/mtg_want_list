@@ -1,46 +1,13 @@
 EUR/CZK: 24.333 (ECB 2026-05-15)
 
-duel-slimfoot | 100 cards | 11 wanted | 89 owned | total 161.93 eur / 3940.24 CZK
-
-0-5 eur | total 10.54 eur / 256.47 CZK
-Mountain [duel-slimfoot, edh-ziatora] > 0.02 eur / 0.49 CZK
-Fyndhorn Elves [duel-slimfoot, edh-ziatora] > 2.24 eur / 54.51 CZK
-Mawloc > 4.01 eur / 97.58 CZK
-Headliner Scarlett > 4.27 eur / 103.90 CZK
-
-5-10 eur | total 16.54 eur / 402.47 CZK
-Blazemire Verge > 7.48 eur / 182.01 CZK
-Chaos Defiler [duel-slimfoot, edh-ziatora] > 9.06 eur / 220.46 CZK
-
-10-50 eur | total 134.85 eur / 3281.31 CZK
-Delighted Halfling [duel-slimfoot, edh-ziatora] > 15.75 eur / 383.24 CZK
-Phyrexian Tower [duel-slimfoot, edh-ziatora] > 21.85 eur / 531.68 CZK
-Opposition Agent > 23.82 eur / 579.61 CZK
-Arid Mesa [duel-slimfoot, edh-ziatora] > 24.79 eur / 603.22 CZK
-Badgermole Cub > 48.64 eur / 1183.56 CZK
+duel-slimfoot | 100 cards | 0 wanted | 100 owned | total 0.00 eur / 0.00 CZK
 
 edh-skullbriar | 100 cards | 0 wanted | 100 owned | total 0.00 eur / 0.00 CZK
 
-edh-ziatora | 100 cards | 11 wanted | 89 owned | total 78.27 eur / 1904.54 CZK
+edh-ziatora | 100 cards | 2 wanted | 98 owned | total 2.98 eur / 72.51 CZK
 
-0-5 eur | total 6.82 eur / 165.95 CZK
-Mountain [duel-slimfoot, edh-ziatora] > 0.02 eur / 0.49 CZK
-Riveteers Ascendancy > 0.31 eur / 7.54 CZK
-Kresh the Bloodbraided > 0.50 eur / 12.17 CZK
+0-5 eur | total 2.98 eur / 72.51 CZK
 Yargle and Multani > 0.53 eur / 12.90 CZK
-Daemogoth Titan > 0.77 eur / 18.74 CZK
-Fyndhorn Elves [duel-slimfoot, edh-ziatora] > 2.24 eur / 54.51 CZK
 Industrial Advancement > 2.45 eur / 59.62 CZK
 
-5-10 eur | total 9.06 eur / 220.46 CZK
-Chaos Defiler [duel-slimfoot, edh-ziatora] > 9.06 eur / 220.46 CZK
-
-10-50 eur | total 62.39 eur / 1518.14 CZK
-Delighted Halfling [duel-slimfoot, edh-ziatora] > 15.75 eur / 383.24 CZK
-Phyrexian Tower [duel-slimfoot, edh-ziatora] > 21.85 eur / 531.68 CZK
-Arid Mesa [duel-slimfoot, edh-ziatora] > 24.79 eur / 603.22 CZK
-
-want-maybeboard | 8 cards | 1 wanted | 7 owned | total 3.31 eur / 80.54 CZK
-
-0-5 eur | total 3.31 eur / 80.54 CZK
-Life's Legacy > 3.31 eur / 80.54 CZK
+want-maybeboard | 8 cards | 0 wanted | 8 owned | total 0.00 eur / 0.00 CZK
