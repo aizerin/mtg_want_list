@@ -1,92 +1,46 @@
 EUR/CZK: 24.333 (ECB 2026-05-15)
 
-duel-slimfoot | 100 cards | 41 wanted | 59 owned | total 339.35 eur / 8257.40 CZK
+duel-slimfoot | 100 cards | 11 wanted | 89 owned | total 161.93 eur / 3940.24 CZK
 
-0-5 eur | total 39.72 eur / 966.51 CZK
-Grief > 0.02 eur / 0.49 CZK
+0-5 eur | total 10.54 eur / 256.47 CZK
 Mountain [duel-slimfoot, edh-ziatora] > 0.02 eur / 0.49 CZK
-Troll of Khazad-dum [duel-slimfoot, edh-ziatora] > 0.70 eur / 17.03 CZK
-Wight of the Reliquary [duel-slimfoot, edh-ziatora] > 0.74 eur / 18.01 CZK
-Detective's Phoenix > 0.80 eur / 19.47 CZK
-Tersa Lightshatter > 0.96 eur / 23.36 CZK
-Abrupt Decay [duel-slimfoot, edh-ziatora] > 1.22 eur / 29.69 CZK
-Ignoble Hierarch [duel-slimfoot, edh-ziatora] > 1.32 eur / 32.12 CZK
-Blackcleave Cliffs [duel-slimfoot, edh-ziatora] > 1.51 eur / 36.74 CZK
-Dismember > 1.52 eur / 36.99 CZK
-Sundering Eruption > 1.54 eur / 37.47 CZK
-Fury > 1.66 eur / 40.39 CZK
-Goblin Bombardment [duel-slimfoot, edh-ziatora] > 1.80 eur / 43.80 CZK
-Pyrogoyf > 1.88 eur / 45.75 CZK
-Frenzied Baloth > 1.92 eur / 46.72 CZK
 Fyndhorn Elves [duel-slimfoot, edh-ziatora] > 2.24 eur / 54.51 CZK
-Flare of Malice > 2.62 eur / 63.75 CZK
-Slimefoot and Squee > 2.64 eur / 64.24 CZK
-Lazotep Quarry > 2.88 eur / 70.08 CZK
-Animate Dead [duel-slimfoot, edh-ziatora] > 3.45 eur / 83.95 CZK
 Mawloc > 4.01 eur / 97.58 CZK
 Headliner Scarlett > 4.27 eur / 103.90 CZK
 
-5-10 eur | total 43.59 eur / 1060.68 CZK
-Broadside Bombardiers > 5.64 eur / 137.24 CZK
-Abundant Countryside > 6.18 eur / 150.38 CZK
-Wastewood Verge > 7.45 eur / 181.28 CZK
+5-10 eur | total 16.54 eur / 402.47 CZK
 Blazemire Verge > 7.48 eur / 182.01 CZK
-Commercial District [duel-slimfoot, edh-ziatora] > 7.78 eur / 189.31 CZK
 Chaos Defiler [duel-slimfoot, edh-ziatora] > 9.06 eur / 220.46 CZK
 
-10-50 eur | total 256.04 eur / 6230.22 CZK
-Starting Town > 10.32 eur / 251.12 CZK
-Formidable Speaker > 11.66 eur / 283.72 CZK
-Multiversal Passage > 11.73 eur / 285.43 CZK
-Underground Mortuary [duel-slimfoot, edh-ziatora] > 13.26 eur / 322.66 CZK
-Hexing Squelcher > 13.33 eur / 324.36 CZK
-Wooded Foothills [duel-slimfoot, edh-ziatora] > 15.11 eur / 367.67 CZK
+10-50 eur | total 134.85 eur / 3281.31 CZK
 Delighted Halfling [duel-slimfoot, edh-ziatora] > 15.75 eur / 383.24 CZK
-Barrowgoyf > 16.27 eur / 395.90 CZK
 Phyrexian Tower [duel-slimfoot, edh-ziatora] > 21.85 eur / 531.68 CZK
 Opposition Agent > 23.82 eur / 579.61 CZK
 Arid Mesa [duel-slimfoot, edh-ziatora] > 24.79 eur / 603.22 CZK
-Orcish Bowmasters [duel-slimfoot, edh-ziatora] > 29.51 eur / 718.07 CZK
 Badgermole Cub > 48.64 eur / 1183.56 CZK
 
 edh-skullbriar | 100 cards | 0 wanted | 100 owned | total 0.00 eur / 0.00 CZK
 
-edh-ziatora | 100 cards | 25 wanted | 75 owned | total 161.76 eur / 3936.11 CZK
+edh-ziatora | 100 cards | 11 wanted | 89 owned | total 78.27 eur / 1904.54 CZK
 
-0-5 eur | total 18.64 eur / 453.57 CZK
+0-5 eur | total 6.82 eur / 165.95 CZK
 Mountain [duel-slimfoot, edh-ziatora] > 0.02 eur / 0.49 CZK
 Riveteers Ascendancy > 0.31 eur / 7.54 CZK
-Atsushi, the Blazing Sky > 0.36 eur / 8.76 CZK
 Kresh the Bloodbraided > 0.50 eur / 12.17 CZK
 Yargle and Multani > 0.53 eur / 12.90 CZK
-Troll of Khazad-dum [duel-slimfoot, edh-ziatora] > 0.70 eur / 17.03 CZK
-Anger > 0.72 eur / 17.52 CZK
-Wight of the Reliquary [duel-slimfoot, edh-ziatora] > 0.74 eur / 18.01 CZK
 Daemogoth Titan > 0.77 eur / 18.74 CZK
-Abrupt Decay [duel-slimfoot, edh-ziatora] > 1.22 eur / 29.69 CZK
-Ignoble Hierarch [duel-slimfoot, edh-ziatora] > 1.32 eur / 32.12 CZK
-Blackcleave Cliffs [duel-slimfoot, edh-ziatora] > 1.51 eur / 36.74 CZK
-Goblin Bombardment [duel-slimfoot, edh-ziatora] > 1.80 eur / 43.80 CZK
 Fyndhorn Elves [duel-slimfoot, edh-ziatora] > 2.24 eur / 54.51 CZK
 Industrial Advancement > 2.45 eur / 59.62 CZK
-Animate Dead [duel-slimfoot, edh-ziatora] > 3.45 eur / 83.95 CZK
 
-5-10 eur | total 22.85 eur / 556.01 CZK
-Archon of Cruelty > 6.01 eur / 146.24 CZK
-Commercial District [duel-slimfoot, edh-ziatora] > 7.78 eur / 189.31 CZK
+5-10 eur | total 9.06 eur / 220.46 CZK
 Chaos Defiler [duel-slimfoot, edh-ziatora] > 9.06 eur / 220.46 CZK
 
-10-50 eur | total 120.27 eur / 2926.53 CZK
-Underground Mortuary [duel-slimfoot, edh-ziatora] > 13.26 eur / 322.66 CZK
-Wooded Foothills [duel-slimfoot, edh-ziatora] > 15.11 eur / 367.67 CZK
+10-50 eur | total 62.39 eur / 1518.14 CZK
 Delighted Halfling [duel-slimfoot, edh-ziatora] > 15.75 eur / 383.24 CZK
 Phyrexian Tower [duel-slimfoot, edh-ziatora] > 21.85 eur / 531.68 CZK
 Arid Mesa [duel-slimfoot, edh-ziatora] > 24.79 eur / 603.22 CZK
-Orcish Bowmasters [duel-slimfoot, edh-ziatora] > 29.51 eur / 718.07 CZK
 
-want-maybeboard | 8 cards | 3 wanted | 5 owned | total 5.16 eur / 125.56 CZK
+want-maybeboard | 8 cards | 1 wanted | 7 owned | total 3.31 eur / 80.54 CZK
 
-0-5 eur | total 5.16 eur / 125.56 CZK
-Undying Malice > 0.65 eur / 15.82 CZK
-Feign Death > 1.20 eur / 29.20 CZK
+0-5 eur | total 3.31 eur / 80.54 CZK
 Life's Legacy > 3.31 eur / 80.54 CZK
