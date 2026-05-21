@@ -92,6 +92,7 @@ class Match:
     price: Decimal
     finish: str
     card_name: str
+    type_line: str
     set_code: str
     set_name: str
     collector_number: str
@@ -437,6 +438,7 @@ def find_matches(
                     price=value,
                     finish=finish,
                     card_name=str(card.get("name") or want_by_lookup_key[lookup_key].display_name),
+                    type_line=str(card.get("type_line") or ""),
                     set_code=str(card.get("set") or "").upper(),
                     set_name=str(card.get("set_name") or ""),
                     collector_number=str(card.get("collector_number") or ""),
@@ -454,6 +456,28 @@ def category_for(price: Decimal) -> str:
         if price >= lower and (upper is None or price < upper):
             return label
     raise ValueError(f"Price does not fit a category: {price}")
+
+
+PRINT_TYPE_ORDER = [
+    "Land",
+    "Creature",
+    "Artifact",
+    "Enchantment",
+    "Planeswalker",
+    "Battle",
+    "Instant",
+    "Sorcery",
+    "Other",
+]
+
+
+def print_card_type(type_line: str) -> str:
+    normalized = type_line.partition("—")[0].partition("-")[0]
+    parts = {part.strip() for part in normalized.split() if part.strip()}
+    for card_type in PRINT_TYPE_ORDER[:-1]:
+        if card_type in parts:
+            return card_type
+    return "Other"
 
 
 def format_price(value: Decimal) -> str:
@@ -620,6 +644,33 @@ def write_html_output(
     for wantlist in wantlists:
         grouped, missing = group_matches(wantlist.wants, matches)
         category_sections: list[str] = []
+        print_groups: dict[str, list[tuple[Want, list[str]]]] = {label: [] for label in PRINT_TYPE_ORDER}
+
+        for want in wantlist.wants:
+            qty = f"{want.quantity}x " if want.quantity != 1 else ""
+            tags = tags_by_key.get(want.lookup_key, [])
+            match = matches.get(want.lookup_key)
+            type_label = print_card_type(match.type_line if match else "")
+            print_groups[type_label].append((replace(want, display_name=qty + want.display_name), tags))
+
+        print_sections: list[str] = []
+        for type_label in PRINT_TYPE_ORDER:
+            items = print_groups[type_label]
+            if not items:
+                continue
+            items.sort(key=lambda item: normalize_name(item[0].display_name))
+            rows: list[str] = []
+            for want, tags in items:
+                owned_class = " owned" if want.owned else ""
+                tags_html = ""
+                if tags:
+                    tags_html = f'<div class="print-tags">- {html.escape(", ".join(tags))}</div>'
+                rows.append(
+                    f'<li class="print-row{owned_class}"><div class="print-name">{html.escape(want.display_name)}</div>{tags_html}</li>'
+                )
+            print_sections.append(
+                f'<section class="print-group"><h4>{html.escape(type_label)}</h4><ol class="print-list">{"".join(rows)}</ol></section>'
+            )
 
         for label, _, _ in CATEGORIES:
             items = sorted(grouped[label], key=lambda item: (item[1].price, item[0].display_name.casefold()))
@@ -666,6 +717,8 @@ def write_html_output(
             f'data-deck="{html.escape(deck_ids[wantlist.path], quote=True)}"><h2>{html.escape(deck_display_name(wantlist))}'
             f'<span>{html.escape(card_count_label(wantlist.wants))}</span>'
             f'<span class="price-value">{html.escape(format_prices(wantlist_total(wantlist.wants, matches), exchange_rate))}</span></h2>'
+            f'<section class="print-sheet" aria-hidden="true"><h3>{html.escape(deck_display_name(wantlist))}</h3>'
+            f'{"".join(print_sections)}</section>'
             f'{"".join(category_sections)}</section>'
         )
 
@@ -747,6 +800,8 @@ def write_html_output(
       margin: 0;
       display: flex;
       justify-content: flex-start;
+      gap: 8px;
+      flex-wrap: wrap;
     }}
 
     .toolbar button {{
@@ -950,6 +1005,60 @@ def write_html_output(
       background: #d8f0df;
     }}
 
+    .print-sheet {{
+      display: none;
+    }}
+
+    .print-sheet h3 {{
+      display: none;
+    }}
+
+    .print-group {{
+      break-inside: avoid;
+      margin: 0 0 5px;
+    }}
+
+    .print-group h4 {{
+      margin: 0 0 2px;
+      font-size: 10px;
+      font-weight: 800;
+      line-height: 1.05;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+      color: #374151;
+    }}
+
+    .print-list {{
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }}
+
+    .print-row {{
+      margin: 0 0 2px;
+      padding: 0;
+      break-inside: avoid;
+      color: #111827;
+      font-size: 10px;
+      line-height: 1.05;
+    }}
+
+    .print-row.owned {{
+      color: #4b5563;
+    }}
+
+    .print-name {{
+      margin: 0;
+    }}
+
+    .print-tags {{
+      margin: 0 0 0 7px;
+      color: #6b7280;
+      font-size: 9px;
+      line-height: 1.0;
+      overflow-wrap: anywhere;
+    }}
+
     .preview {{
       position: sticky;
       top: 24px;
@@ -1085,6 +1194,95 @@ def write_html_output(
         display: none;
       }}
     }}
+
+    @page {{
+      size: A4 portrait;
+      margin: 7mm;
+    }}
+
+    @media print {{
+      :root {{
+        --bg: #ffffff;
+        --panel: #ffffff;
+        --ink: #111827;
+        --muted: #4b5563;
+        --line: #d1d5db;
+      }}
+
+      body {{
+        background: #ffffff;
+        color: #111827;
+        font-size: 10px;
+        line-height: 1.05;
+      }}
+
+      .app-header,
+      .preview,
+      .mobile-preview,
+      .price-band,
+      h2 > span,
+      .deck-tags,
+      .price-value {{
+        display: none !important;
+      }}
+
+      main {{
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: block;
+      }}
+
+      .bands {{
+        min-width: 0;
+      }}
+
+      .wantlist-section {{
+        margin: 0;
+      }}
+
+      .wantlist-section[hidden] {{
+        display: none !important;
+      }}
+
+      .wantlist-section:not([hidden]) {{
+        display: block;
+      }}
+
+      .wantlist-section:not([hidden]) h2 {{
+        margin: 0 0 2mm;
+        display: block;
+        font-size: 13px;
+        line-height: 1.05;
+        color: #111827;
+      }}
+
+      .print-sheet {{
+        display: block;
+      }}
+
+      .print-sheet h3 {{
+        display: none;
+      }}
+
+      .print-sheet {{
+        column-count: 3;
+        column-gap: 4mm;
+        column-fill: balance;
+      }}
+
+      .print-group {{
+        margin-bottom: 1.5mm;
+      }}
+
+      .print-list {{
+        margin-bottom: 0;
+      }}
+
+      .print-row {{
+        margin-bottom: 0.6mm;
+      }}
+    }}
   </style>
 </head>
 <body class="prices-hidden">
@@ -1099,6 +1297,7 @@ def write_html_output(
       </nav>
       <div class="toolbar">
         <button type="button" id="price-toggle" aria-pressed="false">Show Scryfall prices</button>
+        <button type="button" id="print-trigger">Print list</button>
       </div>
     </div>
   </header>
@@ -1126,6 +1325,7 @@ def write_html_output(
     const mobileImage = document.querySelector("#mobile-card-preview");
     const mobileClose = document.querySelector("#mobile-preview button");
     const priceToggle = document.querySelector("#price-toggle");
+    const printTrigger = document.querySelector("#print-trigger");
     const deckTabs = Array.from(document.querySelectorAll(".deck-tab"));
     const deckSections = Array.from(document.querySelectorAll(".wantlist-section"));
 
@@ -1194,6 +1394,10 @@ def write_html_output(
 
     priceToggle.addEventListener("click", () => {{
       setPricesVisible(document.body.classList.contains("prices-hidden"));
+    }});
+
+    printTrigger.addEventListener("click", () => {{
+      window.print();
     }});
 
     deckTabs.forEach((tab) => {{
