@@ -1,2 +1,4 @@
 __pycache__
 all-cards*
+.DS_Store
+mtgtop8-cache/
