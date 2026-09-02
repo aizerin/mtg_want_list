@@ -1,33 +1,23 @@
-EUR/CZK: 24.322 (ECB 2026-05-20)
+EUR/CZK: 24.159 (ECB 2026-09-01)
 
 duel-slimfoot | 100 cards | 0 wanted | 100 owned | total 0.00 eur / 0.00 CZK
 
 edh-skullbriar | 100 cards | 0 wanted | 100 owned | total 0.00 eur / 0.00 CZK
 
-edh-ziatora | 100 cards | 2 wanted | 98 owned | total 2.98 eur / 72.48 CZK
+edh-ziatora | 100 cards | 0 wanted | 100 owned | total 0.00 eur / 0.00 CZK
 
-0-5 eur | total 2.98 eur / 72.48 CZK
-Yargle and Multani > 0.53 eur / 12.89 CZK
-Industrial Advancement > 2.45 eur / 59.59 CZK
+manabase | 23 cards | 8 wanted | 15 owned | total 1972.83 eur / 47661.60 CZK
 
-manabase | 24 cards | 12 wanted | 12 owned | total 2971.95 eur / 72283.77 CZK
+10-50 eur | total 69.73 eur / 1684.61 CZK
+Urborg, Tomb of Yawgmoth > 31.61 eur / 763.67 CZK
+Urza's Saga > 38.12 eur / 920.94 CZK
 
-10-50 eur | total 83.01 eur / 2018.97 CZK
-Flooded Strand > 13.28 eur / 323.00 CZK
-Urborg, Tomb of Yawgmoth > 31.61 eur / 768.82 CZK
-Urza's Saga > 38.12 eur / 927.15 CZK
-
-50-100 eur | total 85.20 eur / 2072.23 CZK
-Ancient Tomb > 85.20 eur / 2072.23 CZK
-
-200+ eur | total 2803.74 eur / 68192.56 CZK
-Plateau > 214.64 eur / 5220.47 CZK
-Savannah > 243.85 eur / 5930.92 CZK
-Scrubland > 263.65 eur / 6412.50 CZK
-Tundra > 299.86 eur / 7293.19 CZK
-Tropical Island > 315.09 eur / 7663.62 CZK
-City of Traitors > 401.84 eur / 9773.55 CZK
-Volcanic Island > 479.26 eur / 11656.56 CZK
-Underground Sea > 585.55 eur / 14241.75 CZK
+200+ eur | total 1903.10 eur / 45976.99 CZK
+Plateau > 214.64 eur / 5185.49 CZK
+Savannah > 243.85 eur / 5891.17 CZK
+Scrubland > 263.65 eur / 6369.52 CZK
+Tundra > 299.86 eur / 7244.32 CZK
+City of Traitors > 401.84 eur / 9708.05 CZK
+Volcanic Island > 479.26 eur / 11578.44 CZK
 
 want-maybeboard | 8 cards | 0 wanted | 8 owned | total 0.00 eur / 0.00 CZK
